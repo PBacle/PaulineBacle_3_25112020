@@ -3,19 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/ead44a5493.js" crossorigin="anonymous"></script>
     <title>Oh My food ! R&eacute;server le menu qui vous convient</title>
 </head>
 <body>
 
     <header>
 
+        <img src="PICTURES/LOGO/ohmyfood@2x.svg" alt="logo">
+
     </header>
 
     <div id="content">
+        <div id="localisation">
+            <form>
+                <span class="fas fa-map-marker-alt"></span>
+                <input type="text" name="localisation" id="localisation" value="Paris, Belleville">    
+            </form>
+        </div>
+
+        <div id="presentation">
+            <section>
+                <h1>Réserver le menu qui vous convient</h1>
+                <p>Découvrez des restaurants d'exception, sélectionnés par nos soins.</p>
+                <a href="#" class="button">Explorer nos restaurants</a>
+            </section>
+
+            <section>
+                <h2>Fonctionnement</h2>
+                <ol>
+                    <li><span class="fas fa-mobile-alt"></span><span>Choisissez un restaurant</span></li>
+                    <li><span class="fas fa-list-ul"></span><span>Composez votre menu</span></li>
+                    <li><span class="fas fa-store"></span><span>Dégustez au restaurant</span></li>
+                </ol>
+
+            </section>
+
+        </div>
+
+        <section id="restaurants">
+            <h2>Restaurants</h2>
+
+            <div>
+                <a href="RESTAURANTS/LaPaletteDuGout.html" class="restaurant restaurant--new">
+                    <p>Nouveau</p>
+                    <img src="PICTURES/RESTAURANTS/LaPaletteDuGout.jpg" alt="Photo de La palette du goût">
+                    <div class="description">
+                        <h3>La palette du goût</h3>
+                        <p>Ménilmontant</p>
+                    </div>
+                    <span class="far fa-heart"></span>
+                </a>
+                <a href="RESTAURANTS/LaNoteEnchantee.html" class="restaurant restaurant--new">
+                    <p>Nouveau</p>
+                    <img src="PICTURES/RESTAURANTS/LaNoteEnchantee.jpg" alt="Photo de La note enchantée">
+                    <div class="description">
+                        <h3>La note enchantée</h3>
+                        <p>Charonne</p>
+                    </div>
+                    <span class="far fa-heart"></span>
+                </a>
+                <a href="RESTAURANTS/ALaFrancaise.html" class="restaurant">
+                    <img src="PICTURES/RESTAURANTS/ALaFrancaise.jpg" alt="Photo de À la française">
+                    <div class="description">
+                        <h3>À la française</h3>
+                        <p>Cité rouge</p>
+                    </div>
+                    <span class="far fa-heart"></span>
+                </a>
+                <a href="RESTAURANTS/LeDeliceDesSens.html" class="restaurant">
+                    <img src="PICTURES/RESTAURANTS/LeDeliceDesSens.jpg" alt="Photo du Délice des sens">
+                    <div class="description">
+                        <h3>Le délice des sens</h3>
+                        <p>Folie-Méricourt</p>
+                    </div>
+                    <span class="far fa-heart"></span>
+                </a>
+            </div>
+
+        </section>
 
     </div>
 
     <footer>
+        <img src="PICTURES/LOGO/ohmyfood.png" alt="logo">
+        <ul>
+            <li><a href="#"><span class="fas fa-utensils"></span><span></span>Proposer un restaurant</span></a></li>
+            <li><a href="#"><span class="fas fa-hands-helping"></span><span>Devenir partenaire</span></a></li>
+            <li><a href="#">Mentions légales</a></li>
+            <li><a href="mailto:contact@ohmyfood.fr">Contact</a></li>
+        </ul>
 
     </footer>
     
