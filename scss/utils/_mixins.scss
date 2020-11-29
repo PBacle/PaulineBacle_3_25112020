@@ -1,0 +1,15 @@
+@mixin fontDef($fontName: $font-main) {
+    @if ($fontName == $font-main) {
+        font-family:  $font-main, sans-serif;
+    }@else{
+        font-family: $fontName, cursive;
+    }
+}
+
+@mixin gradient_PrimtoSecond($NoReverse: true,$angle: '180deg'){
+    @if $NoReverse{
+        background: linear-gradient($angle, $colour-primary, $colour-secondary);
+    }@else{
+        background: linear-gradient($angle, $colour-secondary, $colour-primary);
+    }
+}

@@ -1,0 +1,54 @@
+/* @import "./utils/functions";*/
+html, body {
+  max-width: 100%;
+  user-select: none;
+  font-family: Roboto, sans-serif;
+  color: black;
+}
+
+body {
+  background-color: #f6f6f6;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 20%;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+/*@import "./components/buttons";*/
+header {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  height: 60px;
+  max-width: 100%;
+  box-shadow: 0 4px 4px rgba(53, 53, 53, 0.3);
+  background-color: white;
+}
+
+header img {
+  max-height: 50%;
+  margin: auto;
+}
+
+header > a {
+  position: absolute;
+  left: 0;
+  margin-left: 15px;
+  font-size: 1.3em;
+  line-height: 60px;
+}
+
+/*@import "./pages/restaurants";
+@import "./pages/index";*/
+
+/*# sourceMappingURL=style.css.map */

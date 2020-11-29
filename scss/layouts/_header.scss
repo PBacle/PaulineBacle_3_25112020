@@ -1,0 +1,22 @@
+header{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    height:$header-height;
+    max-width: 100%;
+    box-shadow: 0 4px 4px rgba($colour-bkg-secondary, 0.3);
+    background-color: white;
+}
+
+header img{
+    max-height: 50%;
+    margin: auto;
+}
+
+header > a{
+    position:absolute;
+    left:0;
+    margin-left: 15px;
+    font-size: $fontsize-icon;
+    line-height: $header-height;
+}
