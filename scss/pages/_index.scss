@@ -2,8 +2,8 @@
 #localisation{
     height:50px;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: center;justify-content: center;
+    background: $colour-bkg-primary--darker;
     
     & input[type="text"]{
         font-weight: bold;
@@ -16,4 +16,20 @@
     & input[type="submit"]{
         display:none;
     }
+}
+
+#presentation{
+    height:285px;
+    display: flex;flex-direction: column;
+    align-items: center;justify-content: center;
+    & p{
+        color: lighten(black, 30);
+        margin:20px 50px;
+        font-size: 1.2em;    
+    }
+}
+
+#fonctionnement{
+    background: white;
+
 }

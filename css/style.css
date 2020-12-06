@@ -29,6 +29,11 @@ ul {
   list-style: none;
 }
 
+h1 {
+  margin: 0 75px;
+  font-size: 1.6em;
+}
+
 .button {
   display: inline-block;
   color: white;
@@ -38,6 +43,8 @@ ul {
   width: 220px;
   line-height: 50px;
   background: linear-gradient(180deg, #FF79DA, #9356DC);
+  box-shadow: 3px 5px 5px #d0d0d0;
+  margin: 5px 0;
 }
 
 header {
@@ -109,6 +116,7 @@ footer ul > li + li {
   display: flex;
   align-items: center;
   justify-content: center;
+  background: #eaeaea;
 }
 #localisation input[type=text] {
   font-weight: bold;
@@ -120,6 +128,23 @@ footer ul > li + li {
 }
 #localisation input[type=submit] {
   display: none;
+}
+
+#presentation {
+  height: 285px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#presentation p {
+  color: #4d4d4d;
+  margin: 20px 50px;
+  font-size: 1.2em;
+}
+
+#fonctionnement {
+  background: white;
 }
 
 /*@import "./pages/restaurants";
