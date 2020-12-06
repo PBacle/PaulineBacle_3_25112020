@@ -5,12 +5,26 @@
     border-radius: 25px;
     width:220px; line-height:50px;
     @include gradient_PrimtoSecond(false);
-    box-shadow: 3px 5px 5px darken($colour-bkg-primary, 10);
+    box-shadow: 3px 5px 5px darken($colour-bkg-primary, 15);
     margin: 5px 0;
     font-size: 0.9em;
+    position: relative;
+
+    &__bg{
+        background: white;
+        border-radius: 25px;
+        position: absolute;
+        top: 0;right: 0; bottom: 0;left: 0;
+        z-index: 1;
+        opacity: 0;
+        transition: opacity 250ms ;
+    }
+    &:hover{
+        box-shadow: 4px 6px 6px darken($colour-bkg-primary, 15);        
+        & .button__bg, .fas {opacity: 0.25;}
+    }
+
 }
-
-
 
 .fa-heart{
     display: inline-block;
@@ -22,19 +36,19 @@
         z-index: 1;
     }
 
-    &--bg::before{
+    &__bg::before{
         @include gradient_PrimtoSecond;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         opacity: 0;
         position: relative;
         z-index: -1;
+        transition: opacity 200ms;
     }
 
     &:hover {
         & + .fa-heart--bg::before{
             opacity: 1;
-            transition: opacity 200ms;
         }
     }                    
 }
