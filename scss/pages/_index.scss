@@ -7,10 +7,10 @@
     
     & input[type="text"]{
         font-weight: bold;
-        font-size: 15px;
+        font-size: 0.9em;
         border:none;
         margin:0 15px ;
-        width: 110px;
+        width: 130px;
         background: transparent;
     }
     & input[type="submit"]{
@@ -24,12 +24,74 @@
     align-items: center;justify-content: center;
     & p{
         color: lighten(black, 30);
-        margin:20px 50px;
-        font-size: 1.2em;    
+        margin:20px 50px;    
+    }
+}
+
+#content section:nth-of-type(even){
+    background: white;
+}
+
+#fonctionnement,#restaurants{
+    text-align: left;
+    padding:0 20px 0 20px ;
+    min-height: 440px;
+    & h2{
+        padding-top: 50px;
+        padding-bottom: 30px;
     }
 }
 
 #fonctionnement{
-    background: white;
+    & ol{
+        counter-reset: item 0;
+        list-style: none;
+        padding:0 12.5px 0 12.5px;
+        & .item{
+            &:before {
+                content: counter(item);
+                border-radius: 100%;                          // Gives circle shape
+                background-color: $colour-primary;
+                width: 25px;line-height: 25px;                            
+                text-align: center;
+                margin-left: -12.5px;
+                color:white;
+                font-weight: bold;
+                display: inline-block;
+            }
+            counter-increment: item;
+            line-height:75px;
+            background: $colour-bkg-primary;
+            border-radius: 25px;
+            box-shadow: 3px 5px 5px  darken(white, 10);
+            font-weight: bold;
+            position: relative;
+            z-index: 1;
 
+            &:hover {
+                & .item__bg {
+                    opacity: 0.15;
+                }
+            }
+            &__bg {
+                position: absolute;
+                top: 0;right: 0;
+                bottom: 0;left: 0;
+                background: $colour-primary;
+                opacity: 0;
+                z-index: -1;
+                transition: opacity 150ms;
+                border-radius: 25px;
+            }
+
+            & span.fas{
+                color:lighten(#000000,50);
+                padding:0 20px 0 20px;
+            }
+        }
+        & li + li{
+            margin-top: 25px;
+        }
+    }
 }
+

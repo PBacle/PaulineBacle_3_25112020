@@ -6,17 +6,16 @@ header{
     max-width: 100%;
     box-shadow: 0 4px 4px rgba($colour-bkg-secondary, 0.3);
     background-color: white;
-}
+    & img{
+        min-width: 165px;
+        margin: auto;
+    }
 
-header img{
-    max-height: 50%;
-    margin: auto;
-}
-
-header > a{
-    position:absolute;
-    left:0;
-    margin-left: 15px;
-    font-size: $fontsize-icon;
-    line-height: $header-height;
+    & a{
+        position:absolute;
+        left:0;
+        margin-left: 15px;
+        font-size: $fontsize-icon;
+        line-height: $header-height;
+    }
 }
