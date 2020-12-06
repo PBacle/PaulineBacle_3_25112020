@@ -49,6 +49,29 @@ h1 {
   font-size: 0.9em;
 }
 
+.fa-heart {
+  display: inline-block;
+  padding: 0 15px 0 15px;
+  font-size: 1.4em;
+  position: relative;
+}
+.fa-heart::before {
+  position: relative;
+  z-index: 1;
+}
+.fa-heart--bg::before {
+  background: linear-gradient(180deg, #9356DC, #FF79DA);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 0;
+  position: relative;
+  z-index: -1;
+}
+.fa-heart:hover + .fa-heart--bg::before {
+  opacity: 1;
+  transition: opacity 200ms;
+}
+
 header {
   display: flex;
   justify-content: center;
@@ -153,23 +176,35 @@ footer ul > li + li {
   min-height: 440px;
 }
 #fonctionnement h2, #restaurants h2 {
+  font-size: 1.3em;
   padding-top: 50px;
-  padding-bottom: 30px;
+  margin-bottom: 30px;
+}
+#fonctionnement h3, #restaurants h3 {
+  font-size: 1.2em;
+}
+#fonctionnement ol, #fonctionnement ul, #restaurants ol, #restaurants ul {
+  list-style: none;
+}
+#fonctionnement li, #restaurants li {
+  box-shadow: 3px 5px 5px #e6e6e6;
+  border-radius: 25px;
+  position: relative;
+  z-index: 1;
+  background-color: white;
+}
+#fonctionnement li + li, #restaurants li + li {
+  margin-top: 22.5px;
 }
 
 #fonctionnement ol {
   counter-reset: item 0;
-  list-style: none;
-  padding: 0 12.5px 0 12.5px;
+  padding: 0 0 0 12.5px;
 }
 #fonctionnement ol .item {
   counter-increment: item;
-  line-height: 75px;
-  box-shadow: 3px 5px 5px #e6e6e6;
-  border-radius: 25px;
+  line-height: 74px;
   font-weight: bold;
-  position: relative;
-  z-index: 1;
 }
 #fonctionnement ol .item:before {
   content: counter(item);
@@ -185,7 +220,7 @@ footer ul > li + li {
 }
 #fonctionnement ol .item .fas {
   color: gray;
-  line-height: 75px;
+  line-height: 74px;
   padding: 0 20px 0 20px;
   position: relative;
   z-index: 0;
@@ -197,15 +232,6 @@ footer ul > li + li {
   color: #9356DC;
   opacity: 0.3;
 }
-#fonctionnement ol .item:hover .item__bg, #fonctionnement ol .item:hover .fas {
-  opacity: 0;
-}
-#fonctionnement ol .item:hover .item__bg--hover {
-  opacity: 0.15;
-}
-#fonctionnement ol .item:hover .fas--hover {
-  opacity: 1;
-}
 #fonctionnement ol .item__bg {
   background: #f6f6f6;
   border-radius: 25px;
@@ -214,7 +240,7 @@ footer ul > li + li {
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: -1;
+  z-index: -2;
   transition: opacity;
 }
 #fonctionnement ol .item__bg--hover {
@@ -225,12 +251,73 @@ footer ul > li + li {
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: -2;
+  z-index: -1;
   opacity: 0;
   transition: opacity 350ms;
 }
-#fonctionnement ol li + li {
-  margin-top: 25px;
+#fonctionnement ol .item:hover .item__bg, #fonctionnement ol .item:hover .fas {
+  opacity: 0;
+}
+#fonctionnement ol .item:hover .item__bg--hover {
+  opacity: 0.1;
+}
+#fonctionnement ol .item:hover .fas--hover {
+  opacity: 1;
+}
+
+#restaurants ul {
+  position: relative;
+  margin-bottom: 65px;
+}
+#restaurants ul li {
+  height: 250px;
+  position: relative;
+}
+#restaurants ul li a > p {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 1;
+  line-height: 30px;
+  width: 80px;
+  color: green;
+  font-weight: bold;
+  font-size: 0.8em;
+  text-align: center;
+  background: #99E2D0;
+  box-shadow: 3px 3px 3px #e6e6e6;
+  border-radius: 4px;
+}
+#restaurants ul figure {
+  height: 250px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  display: inline-block;
+  min-height: 100%;
+  min-width: 100%;
+}
+#restaurants ul figure img {
+  min-width: 100%;
+  max-height: calc(100% - 80px);
+  border-radius: 25px 25px 0 0;
+  display: block;
+}
+#restaurants ul figure figcaption {
+  box-sizing: border-box;
+  min-height: 80px;
+  max-height: 80px;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  position: relative;
+}
+#restaurants ul figure figcaption .fa-heart {
+  position: absolute;
+  top: 0;
+  right: 15px;
+  line-height: 80px;
 }
 
 /*@import "./pages/restaurants";

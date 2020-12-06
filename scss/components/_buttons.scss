@@ -9,3 +9,32 @@
     margin: 5px 0;
     font-size: 0.9em;
 }
+
+
+
+.fa-heart{
+    display: inline-block;
+    padding: 0 15px 0 15px;
+    font-size: 1.4em;
+    position: relative;
+    &::before{
+        position: relative;
+        z-index: 1;
+    }
+
+    &--bg::before{
+        @include gradient_PrimtoSecond;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        opacity: 0;
+        position: relative;
+        z-index: -1;
+    }
+
+    &:hover {
+        & + .fa-heart--bg::before{
+            opacity: 1;
+            transition: opacity 200ms;
+        }
+    }                    
+}
