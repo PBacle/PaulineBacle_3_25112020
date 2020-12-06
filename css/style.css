@@ -165,9 +165,8 @@ footer ul > li + li {
 #fonctionnement ol .item {
   counter-increment: item;
   line-height: 75px;
-  background: #f6f6f6;
-  border-radius: 25px;
   box-shadow: 3px 5px 5px #e6e6e6;
+  border-radius: 25px;
   font-weight: bold;
   position: relative;
   z-index: 1;
@@ -184,24 +183,51 @@ footer ul > li + li {
   font-weight: bold;
   display: inline-block;
 }
-#fonctionnement ol .item:hover .item__bg {
+#fonctionnement ol .item .fas {
+  color: gray;
+  line-height: 75px;
+  padding: 0 20px 0 20px;
+  position: relative;
+  z-index: 0;
+}
+#fonctionnement ol .item .fas--hover {
+  position: absolute;
+  left: 12.5px;
+  z-index: 10;
+  color: #9356DC;
+  opacity: 0.3;
+}
+#fonctionnement ol .item:hover .item__bg, #fonctionnement ol .item:hover .fas {
+  opacity: 0;
+}
+#fonctionnement ol .item:hover .item__bg--hover {
   opacity: 0.15;
 }
+#fonctionnement ol .item:hover .fas--hover {
+  opacity: 1;
+}
 #fonctionnement ol .item__bg {
+  background: #f6f6f6;
+  border-radius: 25px;
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  background: #9356DC;
-  opacity: 0;
   z-index: -1;
-  transition: opacity 150ms;
-  border-radius: 25px;
+  transition: opacity;
 }
-#fonctionnement ol .item span.fas {
-  color: gray;
-  padding: 0 20px 0 20px;
+#fonctionnement ol .item__bg--hover {
+  background: #9356DC;
+  border-radius: 25px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -2;
+  opacity: 0;
+  transition: opacity 350ms;
 }
 #fonctionnement ol li + li {
   margin-top: 25px;
