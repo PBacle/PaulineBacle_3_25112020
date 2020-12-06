@@ -6,7 +6,7 @@
     }
 }
 
-@mixin gradient_PrimtoSecond($NoReverse: true,$angle: '180deg'){
+@mixin gradient_PrimtoSecond($NoReverse: true,$angle: 180deg){
     @if $NoReverse{
         background: linear-gradient($angle, $colour-primary, $colour-secondary);
     }@else{

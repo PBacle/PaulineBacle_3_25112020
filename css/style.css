@@ -7,7 +7,8 @@ html, body {
 }
 
 body {
-  background-color: #f6f6f6;
+  background: #f6f6f6;
+  text-align: center;
 }
 
 * {
@@ -15,16 +16,30 @@ body {
   padding: 0;
 }
 
-img {
-  max-width: 20%;
-}
-
 a {
   text-decoration: none;
   color: black;
 }
 
-/*@import "./components/buttons";*/
+img {
+  max-width: 20%;
+}
+
+ul {
+  list-style: none;
+}
+
+.button {
+  display: inline-block;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 25px;
+  width: 220px;
+  line-height: 50px;
+  background: linear-gradient(180deg, #FF79DA, #9356DC);
+}
+
 header {
   display: flex;
   justify-content: center;
@@ -46,6 +61,65 @@ header > a {
   margin-left: 15px;
   font-size: 1.3em;
   line-height: 60px;
+}
+
+footer {
+  height: 200px;
+  background-color: #353535;
+  padding: 0 20px 0 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+footer * {
+  color: white;
+}
+
+footer p {
+  font-family: Shrikhand, cursive;
+  padding: 0 5px 0 5px;
+  line-height: 65px;
+  font-size: 20px;
+}
+
+footer ul {
+  flex-grow: 1;
+  padding: 0 5px 0 5px;
+}
+
+footer li {
+  font-size: 15px;
+  vertical-align: middle;
+}
+
+footer span.fas {
+  display: inline-block;
+  width: 12px;
+  line-height: 15px;
+  margin-right: 10px;
+  font-size: 12px;
+}
+
+footer ul > li + li {
+  margin-top: 10px;
+}
+
+#localisation {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#localisation input[type=text] {
+  font-weight: bold;
+  font-size: 15px;
+  border: none;
+  margin: 0 15px;
+  width: 110px;
+  background: transparent;
+}
+#localisation input[type=submit] {
+  display: none;
 }
 
 /*@import "./pages/restaurants";

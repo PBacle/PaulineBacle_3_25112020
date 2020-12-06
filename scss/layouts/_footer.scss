@@ -1,0 +1,41 @@
+footer{
+    height:$footer-height;
+    background-color: $colour-bkg-secondary;
+    padding: 0 $margin-min 0 $margin-min  ;
+    display: flex;
+    flex-direction: column;
+}
+
+footer *{
+    color:white;
+}
+
+footer p{
+    @include fontDef($font-logo);
+    padding:0 $padding-min 0 $padding-min;
+    line-height: 65px;
+    font-size: $fontsize-logo;
+}
+
+footer ul{
+    flex-grow: 1;
+    padding:0 $padding-min 0 $padding-min;
+}
+
+footer li{
+    font-size: 15px;
+    vertical-align: middle;
+}
+
+
+footer span.fas{
+    display: inline-block;
+    width: 12px;
+    line-height: 15px;
+    margin-right: 10px;
+    font-size: 12px;
+}
+
+footer ul > li + li{
+    margin-top: 10px;
+}

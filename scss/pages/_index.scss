@@ -1,0 +1,19 @@
+
+#localisation{
+    height:50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    & input[type="text"]{
+        font-weight: bold;
+        font-size: 15px;
+        border:none;
+        margin:0 15px ;
+        width: 110px;
+        background: transparent;
+    }
+    & input[type="submit"]{
+        display:none;
+    }
+}

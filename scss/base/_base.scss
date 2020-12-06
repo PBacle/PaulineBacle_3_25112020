@@ -6,7 +6,8 @@ html,body{
 }
 
 body{
-    background-color: $colour-bkg-primary;
+    background: $colour-bkg-primary;
+    text-align: center;
 }
 
 *{
@@ -14,11 +15,16 @@ body{
 	padding: 0;
 }
 
+a{
+    text-decoration: none;
+    color:black;
+}
+
+
 img{
     max-width: 20%;
 }
 
-a{
-    text-decoration: none;
-    color:black;
+ul{
+    list-style: none;
 }
