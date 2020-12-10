@@ -65,6 +65,7 @@
         counter-reset: item 0;
         padding:0 0 0 12.5px;
         & .item{
+            background: $colour-bkg-primary;
             counter-increment: item;
             line-height:74px;
             font-weight: bold;
@@ -93,15 +94,15 @@
                     opacity: 0.3;
                 }
             }
-            &__bg {
-                background: $colour-bkg-primary;
-                border-radius: 25px;
-                position: absolute;
-                top: 0;right: 0; bottom: 0;left: 0;
-                z-index: -2;
-                transition: opacity;
-            }
-            &__bg--hover {
+
+            &__bg{
+                &:before{
+                    background: red;
+                    border-radius: 25px;
+                    position: absolute;
+                    top: 0;right: 0; bottom: 0;left: 0;                    
+                    z-index: 2;
+                }
                 background: $colour-primary;
                 border-radius: 25px;
                 position: absolute;
@@ -111,8 +112,8 @@
                 transition: opacity 350ms ;
             }
             &:hover {
-                & .item__bg, .fas {opacity: 0;}
-                & .item__bg--hover {opacity: 0.1;}
+                & .fas {opacity: 0;}
+                & .item__bg{opacity: 0.1;}
                 & .fas--hover{opacity: 1;}
             }
         }

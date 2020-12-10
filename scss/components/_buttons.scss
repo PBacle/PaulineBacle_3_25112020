@@ -1,4 +1,5 @@
 .button{
+    cursor:pointer;
     display: inline-block;
     color:white;font-weight: bold;
     text-align: center;
@@ -27,6 +28,7 @@
 }
 
 .fa-heart{
+    cursor:pointer;
     display: inline-block;
     padding: 0 15px 0 15px;
     font-size: 1.4em;
@@ -34,6 +36,7 @@
     &::before{
         position: relative;
         z-index: 1;
+        transition: opacity 600ms;
     }
 
     &__bg::before{
@@ -42,13 +45,14 @@
         -webkit-text-fill-color: transparent;
         opacity: 0;
         position: relative;
+        transition: opacity 600ms;
         z-index: -1;
-        transition: opacity 200ms;
     }
 
-    &:hover {
-        & + .fa-heart--bg::before{
-            opacity: 1;
-        }
+    &:hover::before {
+        opacity: 0;
+    }                    
+    &:hover + .fa-heart__bg::before {
+        opacity: 1;
     }                    
 }
