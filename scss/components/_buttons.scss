@@ -30,10 +30,11 @@
 .fa-heart{
     cursor:pointer;
     display: inline-block;
-    padding: 0 15px 0 15px;
+    padding: 0 20px 0 20px;
     font-size: 1.4em;
-    position: relative;
-    &::before{
+    position:absolute;
+    bottom:2px;right: 0;
+&::before{
         position: relative;
         z-index: 1;
         transition: opacity 600ms;
@@ -46,7 +47,7 @@
         opacity: 0;
         position: relative;
         transition: opacity 600ms;
-        z-index: -1;
+        z-index: 0;
     }
 
     &:hover::before {
@@ -55,4 +56,19 @@
     &:hover + .fa-heart__bg::before {
         opacity: 1;
     }                    
+}
+
+
+ol, ul{
+    list-style: none;
+}
+li{
+    box-shadow: 3px 5px 5px  darken(white, 10);
+    border-radius: 25px;
+    position: relative;
+    z-index: 1;
+    background-color: white;
+}
+li + li {     
+    margin-top: 22.5px;
 }

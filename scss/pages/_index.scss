@@ -36,28 +36,6 @@
     text-align: left;
     padding:0 20px 0 20px ;
     min-height: 440px;
-    & h2{
-        font-size: 1.3em;
-        padding-top: 50px;
-        margin-bottom: 30px;
-    }
-    & h3{
-        font-size: 1.2em;
-    }
-
-    & ol, ul{
-        list-style: none;
-    }
-    & li{
-        box-shadow: 3px 5px 5px  darken(white, 10);
-        border-radius: 25px;
-        position: relative;
-        z-index: 1;
-        background-color: white;
-    }
-    & li + li {     
-        margin-top: 22.5px;
-    }
 }
 
 #fonctionnement{
@@ -151,12 +129,8 @@
             min-height:100%;
             min-width:100%;
             & img{
-                object-fit: cover;
-                min-width:100%;
                 max-height: calc(100% - 80px);
                 border-radius: 25px 25px 0  0;
-
-                display:block;
             }
             & figcaption{
                 box-sizing: border-box;
@@ -167,8 +141,6 @@
                 padding:15px;
                 position:relative;
                 & .fa-heart{
-                    position:absolute;
-                    top:0;right:15px;
                     line-height: 80px;
                 }
             }
