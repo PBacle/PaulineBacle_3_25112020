@@ -151,6 +151,7 @@
             min-height:100%;
             min-width:100%;
             & img{
+                object-fit: cover;
                 min-width:100%;
                 max-height: calc(100% - 80px);
                 border-radius: 25px 25px 0  0;

@@ -320,6 +320,7 @@ footer ul > li + li {
   min-width: 100%;
 }
 #restaurants ul figure img {
+  object-fit: cover;
   min-width: 100%;
   max-height: calc(100% - 80px);
   border-radius: 25px 25px 0 0;
