@@ -32,10 +32,11 @@
         counter-reset: item 0;
         padding:0 0 0 12.5px;
         & .item{
-            background: $colour-bkg-primary;
+            background:transparent;
             counter-increment: item;
             line-height:74px;
             font-weight: bold;
+            z-index: 1; 
             &:before {
                 content: counter(item);
                 border-radius: 100%;
@@ -63,24 +64,22 @@
             }
 
             &__bg{
-                &:before{
-                    background: red;
-                    border-radius: 25px;
-                    position: absolute;
-                    top: 0;right: 0; bottom: 0;left: 0;                    
-                    z-index: 2;
-                }
-                background: $colour-primary;
+                background:$colour-bkg-primary;
                 border-radius: 25px;
                 position: absolute;
                 top: 0;right: 0; bottom: 0;left: 0;
                 z-index: -1;
-                opacity: 0;
                 transition: opacity 350ms ;
+                &--hover{
+                    opacity: 0;
+                    background: $colour-primary;
+                    transition: opacity 350ms ;
+                }
             }
             &:hover {
                 & .fas {opacity: 0;}
-                & .item__bg{opacity: 0.1;}
+                & .item__bg{opacity: 0;}
+                & .item__bg--hover{opacity: 0.1;}
                 & .fas--hover{opacity: 1;}
             }
         }

@@ -236,10 +236,11 @@ footer ul > li + li {
   padding: 0 0 0 12.5px;
 }
 #fonctionnement ol .item {
-  background: #f6f6f6;
+  background: transparent;
   counter-increment: item;
   line-height: 74px;
   font-weight: bold;
+  z-index: 1;
 }
 #fonctionnement ol .item:before {
   content: counter(item);
@@ -268,7 +269,7 @@ footer ul > li + li {
   opacity: 0.3;
 }
 #fonctionnement ol .item__bg {
-  background: #9356DC;
+  background: #f6f6f6;
   border-radius: 25px;
   position: absolute;
   top: 0;
@@ -276,23 +277,20 @@ footer ul > li + li {
   bottom: 0;
   left: 0;
   z-index: -1;
-  opacity: 0;
   transition: opacity 350ms;
 }
-#fonctionnement ol .item__bg:before {
-  background: red;
-  border-radius: 25px;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 2;
+#fonctionnement ol .item__bg--hover {
+  opacity: 0;
+  background: #9356DC;
+  transition: opacity 350ms;
 }
 #fonctionnement ol .item:hover .fas {
   opacity: 0;
 }
 #fonctionnement ol .item:hover .item__bg {
+  opacity: 0;
+}
+#fonctionnement ol .item:hover .item__bg--hover {
   opacity: 0.1;
 }
 #fonctionnement ol .item:hover .fas--hover {
@@ -399,6 +397,7 @@ section.menu h2 span {
   bottom: 0;
   left: 0;
   right: 0;
+  border: 1px red dashed;
 }
 .menu-item__description {
   width: 100%;
