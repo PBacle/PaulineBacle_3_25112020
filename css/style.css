@@ -402,18 +402,7 @@ section.menu h2 span {
 }
 .menu-item__description {
   width: 100%;
-}
-.menu-item__description > * {
-  width: 100%;
-}
-.menu-item__description > * span:first-child {
-  border: 2px red solid;
-  display: inline-block;
-  width: 100%;
-  flex-wrap: nowrap;
-}
-.menu-item__description h3 {
-  white-space: nowrap;
+  transition: all 300ms ease-in-out;
 }
 .menu-item__description h3 + div {
   margin-top: 10px;
@@ -423,12 +412,17 @@ section.menu h2 span {
   justify-content: space-between;
   align-items: flex-end;
 }
+.menu-item__infos p:first-child {
+  flex-grow: 1;
+}
 .menu-item__infos p:last-child {
+  margin-left: 10px;
   font-weight: bold;
 }
 .menu-item__button {
   opacity: 0;
   width: 0;
+  transition: all 300ms ease-in-out;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -436,6 +430,7 @@ section.menu h2 span {
   background: #99E2D0;
   border-radius: 0 20px 20px 0;
   display: flex;
+  transition: all 300px ease-in-out;
 }
 .menu-item__button span.fas {
   margin: auto;
@@ -450,11 +445,36 @@ section.menu h2 span {
   opacity: 0;
 }
 .menu-item:hover .menu-item__description {
-  width: calc(100% - 50px);
+  width: calc(100% - 100px);
+}
+.menu-item:hover .menu-item__description h3 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.menu-item:hover .menu-item__description p:first-child {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .menu-item:hover .menu-item__button {
   opacity: 1;
-  width: 50px;
+  width: 100px;
+}
+.menu-item:hover .menu-item__button .fas {
+  animation: checkRotation 300ms ease-in-out;
+}
+
+@keyframes checkRotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(90deg);
+  }
+  100% {
+    transform: rotate(270deg);
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

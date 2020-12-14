@@ -47,61 +47,38 @@ section.menu{
         top:0;bottom:0;left:0;right: 0;
     }
 
-
-
-
-
-
-
-
-
-
     &__description{
         width: 100%;
-
-        & > * {
-            width:100%;
-
-
-            &   span:first-child {
-                border:2px red solid;
-                display: inline-block;
-                width: 100%;   
-                flex-wrap: nowrap;
-            }
-        }
-        
-        & h3{
-            white-space: nowrap;
-        }
+        transition: all 300ms ease-in-out;
         & h3 + div{
             margin-top: 10px;
         }
     }
 
-
-
     &__infos{
         display: flex;
         justify-content: space-between;
         align-items: flex-end;
+        & p:first-child{
+            flex-grow: 1;
+        }
         & p:last-child{
+            margin-left: 10px;
             font-weight: bold;
         }
     }
 
 
-
-
-
     &__button{
         opacity: 0;
         width:0;
+        transition: all 300ms ease-in-out;
         position: absolute;
         top:0;bottom:0;right:0;
         background: $colour-tertary;
         border-radius: 0 20px 20px 0;
         display: flex;
+        transition: all 300px ease-in-out;
         & span.fas{
             margin:auto;
             background: white;
@@ -119,14 +96,39 @@ section.menu{
 
     &:hover{
         & .menu-item__description {
-            width: calc(100% - 50px);
-            & > * span:first-child{
-            }    
+            width: calc(100% - 100px);
+            & h3{
+                white-space: nowrap;
+                overflow: hidden;text-overflow: ellipsis;                    
+            }
+            & p:first-child{
+                white-space: nowrap;
+                overflow: hidden;text-overflow: ellipsis;    
+            }
         }
         & .menu-item__button{
             opacity: 1;
-            width: 50px;
+            width: 100px;
+            & .fas{
+                
+                animation: checkRotation 300ms ease-in-out   ;
+            }
         }
     }
 
 }
+
+@keyframes checkRotation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50%{
+        transform: rotate(90deg);
+    }
+  
+    100% {
+        transform: rotate(270deg);
+    }
+  }
+  
