@@ -1,5 +1,4 @@
 form{
-    text-align: left;
     &  h1{
         @include fontDef($font-logo);
         margin:0;
@@ -13,12 +12,121 @@ form{
         padding: 0 20px 0 20px ;
         border-radius: 25px 25px  0 0 ;
     }
+
+    & .button{
+        margin-top: 50px;
+        margin-bottom: 70px;
+    }
 }
 
-.menu{
+section.menu{
+    text-align: left;
     background: $colour-bkg-primary;
     padding: 0 20px 0 20px ;
     & h2{
         text-transform: uppercase;
+        font-weight: normal;
+        position: relative;
+        & span{
+            position: absolute;
+            left:0;right:calc(100% - 4rem);
+            bottom:-10px;
+            border-bottom: 4px solid $colour-tertary ; 
+        }
     }
+
+}
+
+.menu-item{
+    padding:20px;
+    display: flex;    
+    & *{cursor:pointer;}
+    & label{
+        position: absolute;
+        border-radius: 20px;
+        top:0;bottom:0;left:0;right: 0;
+    }
+
+
+
+
+
+
+
+
+
+
+    &__description{
+        width: 100%;
+
+        & > * {
+            width:100%;
+
+
+            &   span:first-child {
+                border:2px red solid;
+                display: inline-block;
+                width: 100%;   
+                flex-wrap: nowrap;
+            }
+        }
+        
+        & h3{
+            white-space: nowrap;
+        }
+        & h3 + div{
+            margin-top: 10px;
+        }
+    }
+
+
+
+    &__infos{
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        & p:last-child{
+            font-weight: bold;
+        }
+    }
+
+
+
+
+
+    &__button{
+        opacity: 0;
+        width:0;
+        position: absolute;
+        top:0;bottom:0;right:0;
+        background: $colour-tertary;
+        border-radius: 0 20px 20px 0;
+        display: flex;
+        & span.fas{
+            margin:auto;
+            background: white;
+            border-radius: 50%;
+            color:$colour-tertary;
+            padding:5px;
+            font-size: 0.7em;
+        }
+        & input{
+            position: absolute;
+            opacity: 0;
+        }
+    }
+
+
+    &:hover{
+        & .menu-item__description {
+            width: calc(100% - 50px);
+            & > * span:first-child{
+            }    
+        }
+        & .menu-item__button{
+            opacity: 1;
+            width: 50px;
+        }
+    }
+
 }

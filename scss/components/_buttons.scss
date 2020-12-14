@@ -39,7 +39,6 @@
         z-index: 1;
         transition: opacity 600ms;
     }
-
     &__bg::before{
         @include gradient_PrimtoSecond;
         -webkit-background-clip: text;
@@ -49,7 +48,6 @@
         transition: opacity 600ms;
         z-index: 0;
     }
-
     &:hover::before {
         opacity: 0;
     }                    
@@ -58,17 +56,18 @@
     }                    
 }
 
-
-ol, ul{
+/* LIST ITEMS
+*/
+#content ol, #content ul{
     list-style: none;
-}
-li{
-    box-shadow: 3px 5px 5px  darken(white, 10);
-    border-radius: 25px;
-    position: relative;
-    z-index: 1;
-    background-color: white;
-}
-li + li {     
-    margin-top: 22.5px;
+    & li{
+        box-shadow: 3px 5px 5px  darken(white, 10);
+        border-radius: 25px;
+        position: relative;
+        z-index: 1;
+        background-color: white;
+    }
+    & li + li {     
+        margin-top: 22.5px;
+    }
 }

@@ -46,6 +46,16 @@ img {
   max-height: 250px;
 }
 
+section:nth-of-type(even) {
+  background: white;
+}
+
+section {
+  text-align: left;
+  padding: 0 20px 0 20px;
+  min-height: 440px;
+}
+
 .button {
   cursor: pointer;
   display: inline-block;
@@ -110,19 +120,19 @@ img {
   opacity: 1;
 }
 
-ol, ul {
+/* LIST ITEMS
+*/
+#content ol, #content ul {
   list-style: none;
 }
-
-li {
+#content ol li, #content ul li {
   box-shadow: 3px 5px 5px #e6e6e6;
   border-radius: 25px;
   position: relative;
   z-index: 1;
   background-color: white;
 }
-
-li + li {
+#content ol li + li, #content ul li + li {
   margin-top: 22.5px;
 }
 
@@ -219,16 +229,6 @@ footer ul > li + li {
 #presentation p {
   color: #4d4d4d;
   margin: 20px 50px;
-}
-
-#content section:nth-of-type(even) {
-  background: white;
-}
-
-#fonctionnement, #restaurants {
-  text-align: left;
-  padding: 0 20px 0 20px;
-  min-height: 440px;
 }
 
 #fonctionnement ol {
@@ -349,9 +349,6 @@ footer ul > li + li {
   line-height: 80px;
 }
 
-form {
-  text-align: left;
-}
 form h1 {
   font-family: Shrikhand, cursive;
   margin: 0;
@@ -365,13 +362,99 @@ form h1 {
   padding: 0 20px 0 20px;
   border-radius: 25px 25px 0 0;
 }
+form .button {
+  margin-top: 50px;
+  margin-bottom: 70px;
+}
 
-.menu {
+section.menu {
+  text-align: left;
   background: #f6f6f6;
   padding: 0 20px 0 20px;
 }
-.menu h2 {
+section.menu h2 {
   text-transform: uppercase;
+  font-weight: normal;
+  position: relative;
+}
+section.menu h2 span {
+  position: absolute;
+  left: 0;
+  right: calc(100% - 4rem);
+  bottom: -10px;
+  border-bottom: 4px solid #99E2D0;
+}
+
+.menu-item {
+  padding: 20px;
+  display: flex;
+}
+.menu-item * {
+  cursor: pointer;
+}
+.menu-item label {
+  position: absolute;
+  border-radius: 20px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.menu-item__description {
+  width: 100%;
+}
+.menu-item__description > * {
+  width: 100%;
+}
+.menu-item__description > * span:first-child {
+  border: 2px red solid;
+  display: inline-block;
+  width: 100%;
+  flex-wrap: nowrap;
+}
+.menu-item__description h3 {
+  white-space: nowrap;
+}
+.menu-item__description h3 + div {
+  margin-top: 10px;
+}
+.menu-item__infos {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.menu-item__infos p:last-child {
+  font-weight: bold;
+}
+.menu-item__button {
+  opacity: 0;
+  width: 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background: #99E2D0;
+  border-radius: 0 20px 20px 0;
+  display: flex;
+}
+.menu-item__button span.fas {
+  margin: auto;
+  background: white;
+  border-radius: 50%;
+  color: #99E2D0;
+  padding: 5px;
+  font-size: 0.7em;
+}
+.menu-item__button input {
+  position: absolute;
+  opacity: 0;
+}
+.menu-item:hover .menu-item__description {
+  width: calc(100% - 50px);
+}
+.menu-item:hover .menu-item__button {
+  opacity: 1;
+  width: 50px;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,4 +1,3 @@
-
 #localisation{
     height:50px;
     display: flex;
@@ -26,16 +25,6 @@
         color: lighten(black, 30);
         margin:20px 50px;    
     }
-}
-
-#content section:nth-of-type(even){
-    background: white;
-}
-
-#fonctionnement,#restaurants{
-    text-align: left;
-    padding:0 20px 0 20px ;
-    min-height: 440px;
 }
 
 #fonctionnement{
