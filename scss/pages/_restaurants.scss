@@ -12,7 +12,6 @@ form{
         padding: 0 20px 0 20px ;
         border-radius: 25px 25px  0 0 ;
     }
-
     & .button{
         margin-top: 50px;
         margin-bottom: 70px;
@@ -35,83 +34,80 @@ section.menu{
         }
     }
 
-}
-
-.menu-item{
-    padding:20px;
-    display: flex;    
-    & *{cursor:pointer;}
-    & label{
-        position: absolute;
-        border-radius: 20px;
-        top:0;bottom:0;left:0;right: 0;
-    }
-    &__description{
-        width: 100%;
-        transition: all 300ms ease-in-out;
-        & h3 + div{
-            margin-top: 10px;
-        }
-    }
-    &__infos{
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-end;
-        & p:first-child{
-            flex-grow: 1;
-        }
-        & p:last-child{
-            margin-left: 10px;
-            font-weight: bold;
-        }
-    }
-
-    &__button{
-        opacity: 0;
-        width:0;
-        transition: all 300ms ease-in-out;
-        position: absolute;
-        top:0;bottom:0;right:0;
-        background: $colour-tertary;
-        border-radius: 0 20px 20px 0;
-        display: flex;
-        transition: all 300px ease-in-out;
-        & span.fas{
-            margin:auto;
-            background: white;
-            border-radius: 50%;
-            color:$colour-tertary;
-            padding:5px;
-            font-size: 0.7em;
-        }
-        & input{
+    .menu-item{
+        padding:20px;
+        display: flex;    
+        cursor:pointer;
+        & label{
             position: absolute;
+            border-radius: 20px;
+            top:0;bottom:0;left:0;right: 0;
+        }
+        &__description{
+            width: 100%;
+            transition: all 300ms ease-in-out;
+            position: relative;
+            & > * {
+                width: calc(100% - 45px);
+            }
+            & h3 + p{
+                margin-top: 10px;
+            }
+            & p:last-child{
+                position: absolute;
+                bottom:0;right: 0;
+                width: 40px;
+                text-align: right;
+                font-weight: bold;
+            }
+        }
+
+        &__button{
             opacity: 0;
+            width:0;
+            transition: all 300ms ease-in-out;
+            position: absolute;
+            top:0;bottom:0;right:0;
+            background: $colour-tertary;
+            border-radius: 0 20px 20px 0;
+            display: flex;
+            transition: all 300px ease-in-out;
+            & span.fas{
+                margin:auto;
+                background: white;
+                border-radius: 50%;
+                color:$colour-tertary;
+                padding:5px;
+                font-size: 0.7em;
+            }
+            & input{
+                position: absolute;
+                opacity: 0;
+            }
+        }
+
+
+        &:hover{
+            & .menu-item__description {
+                width: calc(100% - 100px);
+                & h3{
+                    white-space: nowrap;
+                    overflow: hidden;text-overflow: ellipsis;                    
+                }
+                & p{
+                    white-space: nowrap;
+                    overflow: hidden;text-overflow: ellipsis;    
+                }
+            }
+            & .menu-item__button{
+                opacity: 1;
+                width: 100px;
+                & .fas{
+                    animation: checkRotation 300ms ease-in-out   ;
+                }
+            }
         }
     }
-
-
-    &:hover{
-        & .menu-item__description {
-            width: calc(100% - 100px);
-            & h3{
-                white-space: nowrap;
-                overflow: hidden;text-overflow: ellipsis;                    
-            }
-            & p:first-child{
-                white-space: nowrap;
-                overflow: hidden;text-overflow: ellipsis;    
-            }
-        }
-        & .menu-item__button{
-            opacity: 1;
-            width: 100px;
-            & .fas{
-                animation: checkRotation 300ms ease-in-out   ;
-            }
-        }
-    }
-
 }
 
 @keyframes checkRotation {

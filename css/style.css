@@ -382,15 +382,12 @@ section.menu h2 span {
   bottom: -10px;
   border-bottom: 4px solid #99E2D0;
 }
-
-.menu-item {
+section.menu .menu-item {
   padding: 20px;
   display: flex;
-}
-.menu-item * {
   cursor: pointer;
 }
-.menu-item label {
+section.menu .menu-item label {
   position: absolute;
   border-radius: 20px;
   top: 0;
@@ -398,26 +395,26 @@ section.menu h2 span {
   left: 0;
   right: 0;
 }
-.menu-item__description {
+section.menu .menu-item__description {
   width: 100%;
   transition: all 300ms ease-in-out;
+  position: relative;
 }
-.menu-item__description h3 + div {
+section.menu .menu-item__description > * {
+  width: calc(100% - 45px);
+}
+section.menu .menu-item__description h3 + p {
   margin-top: 10px;
 }
-.menu-item__infos {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-}
-.menu-item__infos p:first-child {
-  flex-grow: 1;
-}
-.menu-item__infos p:last-child {
-  margin-left: 10px;
+section.menu .menu-item__description p:last-child {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 40px;
+  text-align: right;
   font-weight: bold;
 }
-.menu-item__button {
+section.menu .menu-item__button {
   opacity: 0;
   width: 0;
   transition: all 300ms ease-in-out;
@@ -430,7 +427,7 @@ section.menu h2 span {
   display: flex;
   transition: all 300px ease-in-out;
 }
-.menu-item__button span.fas {
+section.menu .menu-item__button span.fas {
   margin: auto;
   background: white;
   border-radius: 50%;
@@ -438,28 +435,28 @@ section.menu h2 span {
   padding: 5px;
   font-size: 0.7em;
 }
-.menu-item__button input {
+section.menu .menu-item__button input {
   position: absolute;
   opacity: 0;
 }
-.menu-item:hover .menu-item__description {
+section.menu .menu-item:hover .menu-item__description {
   width: calc(100% - 100px);
 }
-.menu-item:hover .menu-item__description h3 {
+section.menu .menu-item:hover .menu-item__description h3 {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.menu-item:hover .menu-item__description p:first-child {
+section.menu .menu-item:hover .menu-item__description p {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.menu-item:hover .menu-item__button {
+section.menu .menu-item:hover .menu-item__button {
   opacity: 1;
   width: 100px;
 }
-.menu-item:hover .menu-item__button .fas {
+section.menu .menu-item:hover .menu-item__button .fas {
   animation: checkRotation 300ms ease-in-out;
 }
 
