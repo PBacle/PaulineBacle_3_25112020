@@ -1,5 +1,9 @@
+$nummax-items:4;
+$animation-dur--short:150ms;
+$animation-dur--long:300ms;
+
 form{
-    &  h1{
+    & h1{
         @include fontDef($font-logo);
         margin:0;
         display: flex;
@@ -11,10 +15,6 @@ form{
         background: $colour-bkg-primary;
         padding: 0 20px 0 20px ;
         border-radius: 25px 25px  0 0 ;
-    }
-    & .button{
-        margin-top: 50px;
-        margin-bottom: 70px;
     }
 }
 
@@ -44,9 +44,9 @@ section.menu{
             top:0;bottom:0;left:0;right: 0;
         }
         &__description{
-            width: 100%;
-            transition: all 300ms ease-in-out;
             position: relative;
+            width: 100%;
+            transition: all $animation-dur--long ease-in-out;
             & > * {
                 width: calc(100% - 45px);
             }
@@ -71,7 +71,7 @@ section.menu{
             background: $colour-tertary;
             border-radius: 0 20px 20px 0;
             display: flex;
-            transition: all 300px ease-in-out;
+            transition: all 300ms ease-in-out;
             & span.fas{
                 margin:auto;
                 background: white;
@@ -86,24 +86,20 @@ section.menu{
             }
         }
 
-
-        &:hover{
+        /*ANIMATION: CHOOSING A MENU ITEM*/
+        &:hover{                
             & .menu-item__description {
                 width: calc(100% - 100px);
-                & h3{
-                    white-space: nowrap;
-                    overflow: hidden;text-overflow: ellipsis;                    
-                }
-                & p{
+                & > * {     /*HIDE THE TOO LONG NAME WITH SUSPENSION POINTS*/ 
                     white-space: nowrap;
                     overflow: hidden;text-overflow: ellipsis;    
                 }
             }
-            & .menu-item__button{
+            & .menu-item__button{  /*CHECKBOX APPEAR*/ 
                 opacity: 1;
                 width: 100px;
                 & .fas{
-                    animation: checkRotation 300ms ease-in-out   ;
+                    animation: checkRotation $animation-dur--long ease-in-out   ;
                 }
             }
         }
@@ -122,12 +118,14 @@ section.menu{
     }
   }
   
+
+/*ANIMATION: MENU ITEMS APPEARING PROGRESSIVELY ON LOAD*/
 @for $i from 2 through 4 {
     .menu:nth-child(#{$i}) {
-        @for $ii from 1 through 4 {
+        @for $ii from 1 through $nummax-items {
             & .menu-item:nth-child(#{$ii}){
-                animation: itemAppearing 300ms ease-in-out backwards ;
-                animation-delay: 150ms + 600ms * ($i - 2) + 150ms * $ii;
+                animation: itemAppearing $animation-dur--long ease-in-out backwards ;
+                animation-delay: $animation-dur--short + ($animation-dur--short * $nummax-items) * ($i - 2) + $animation-dur--short * $ii;
             }
         }
     }

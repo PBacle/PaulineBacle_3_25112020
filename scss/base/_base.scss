@@ -1,14 +1,17 @@
 html,body{
-	max-width: 100%;
+    max-width: 100%;
+    min-height: 100%;
 	user-select: none;
     @include fontDef;
-    color:black
+    color:black;
 }
 
 body{
     background: $colour-bkg-primary;
     text-align: center;
     font-size: 1.2em;
+    border:1px red dashed;
+    position:relative
 }
 
 *{
@@ -21,16 +24,14 @@ a{
     color:black;
 }
 
-
 ul{
     list-style: none;
 }
 
 h1{
-    margin:0 75px ;
     font-size: 1.4em;
+    margin:20px 75px ;
 }
-
 
 h2{
     font-size: 1.3em;
