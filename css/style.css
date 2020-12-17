@@ -180,8 +180,8 @@ div#loader {
   font-weight: bold;
   text-align: center;
   border-radius: 25px;
+  padding: 10px;
   width: 220px;
-  line-height: 50px;
   background: linear-gradient(180deg, #FF79DA, #9356DC);
   box-shadow: 3px 5px 5px #d0d0d0;
   font-size: 0.9em;
@@ -344,6 +344,18 @@ ol .item:hover .fas--hover {
   box-shadow: 3px 3px 3px #e6e6e6;
   border-radius: 4px;
 }
+@media screen and (min-width: 650px) {
+  #restaurants ul li + li {
+    margin-top: 0px;
+  }
+}
+@media screen and (min-width: 650px) {
+  #restaurants ul {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 1fr 1fr;
+  }
+}
 #restaurants ul figure {
   height: 250px;
   position: absolute;
@@ -369,6 +381,11 @@ ol .item:hover .fas--hover {
 }
 #restaurants ul figure figcaption .fa-heart {
   line-height: 80px;
+}
+@media screen and (min-width: 650px) {
+  #restaurants {
+    background: #eaeaea;
+  }
 }
 
 header {
@@ -401,7 +418,7 @@ footer {
   flex-direction: column;
   text-align: left;
 }
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 650px) {
   footer {
     height: 100px;
   }
@@ -417,7 +434,7 @@ footer p {
   line-height: 65px;
   font-size: 20px;
 }
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 650px) {
   footer p {
     line-height: 50px;
     text-align: center;
@@ -428,7 +445,7 @@ footer ul {
   flex-grow: 1;
   padding: 0 5px 0 5px;
 }
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 650px) {
   footer ul {
     display: flex;
     flex-direction: row;
@@ -453,7 +470,7 @@ footer span.fas {
 footer ul > li + li {
   margin-top: 10px;
 }
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 650px) {
   footer ul > li + li {
     margin-top: 0px;
   }
@@ -485,9 +502,26 @@ footer ul > li + li {
   align-items: center;
   justify-content: center;
 }
+#presentation h1 {
+  text-align: center;
+}
 #presentation p {
   text-align: center;
   color: #4d4d4d;
+}
+@media screen and (min-width: 650px) {
+  #presentation {
+    width: calc(100% - 320px - 80px);
+  }
+}
+
+@media screen and (min-width: 650px) {
+  #fonctionnement {
+    width: 320px;
+    position: absolute;
+    right: 0px;
+    top: 110px;
+  }
 }
 
 form h1 {

@@ -1,5 +1,6 @@
 /*LIST OF RESTAURANTS*/
 #restaurants{
+
     & ul{
         position:relative;
         margin-bottom: 65px;
@@ -21,6 +22,16 @@
                 border-radius: 4px;
             }
         }
+        & li + li{
+            @include gt-mobile{
+                margin-top: 0px;
+            }        
+        }
+        @include gt-mobile{
+            display: grid;
+            grid-gap : 20px;
+            grid-template-columns: 1fr 1fr;
+        }    
         & figure{
             height:250px;
             position: absolute;
@@ -46,5 +57,8 @@
                 }
             }
         }
+    }
+    @include gt-mobile{
+        background: $colour-bkg-primary--darker;
     }
 }
