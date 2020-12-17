@@ -16,12 +16,25 @@ form{
         padding: 0 20px 0 20px ;
         border-radius: 25px 25px  0 0 ;
     }
+    & div{
+        @include gt-mobile{
+            display: flex;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+        }        
+    }
 }
 
 section.menu{
     text-align: left;
     background: $colour-bkg-primary;
     padding: 0 20px 0 20px ;
+    @include gt-mobile{
+        width: calc(40%);
+        min-width: 436px;
+    }        
+
+
     & h2{
         text-transform: uppercase;
         font-weight: normal;
@@ -120,7 +133,7 @@ section.menu{
   
 
 /*ANIMATION: MENU ITEMS APPEARING PROGRESSIVELY ON LOAD*/
-@for $i from 2 through 4 {
+@for $i from 1 through 3 {
     .menu:nth-child(#{$i}) {
         @for $ii from 1 through $nummax-items {
             & .menu-item:nth-child(#{$ii}){
