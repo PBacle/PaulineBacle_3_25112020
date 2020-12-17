@@ -20,7 +20,7 @@ footer p{
     line-height: 65px;
     @include gt-mobile{
         line-height: 50px;
-        text-align: center;
+/*        text-align: center;*/
     }
     font-size: $fontsize-logo;
 }

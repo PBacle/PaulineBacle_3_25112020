@@ -138,7 +138,7 @@ section.menu{
         @for $ii from 1 through $nummax-items {
             & .menu-item:nth-child(#{$ii}){
                 animation: itemAppearing $animation-dur--long ease-in-out backwards ;
-                animation-delay: $animation-dur--short + ($animation-dur--short * $nummax-items) * ($i - 2) + $animation-dur--short * $ii;
+                animation-delay: $animation-dur--short + ($animation-dur--short * $nummax-items) * ($i - 1) + $animation-dur--short * $ii;
             }
         }
     }

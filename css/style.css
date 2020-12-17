@@ -438,7 +438,7 @@ footer p {
 @media screen and (min-width: 650px) {
   footer p {
     line-height: 50px;
-    text-align: center;
+    /*        text-align: center;*/
   }
 }
 
@@ -659,53 +659,53 @@ section.menu .menu-item:hover .menu-item__button .fas {
 /*ANIMATION: MENU ITEMS APPEARING PROGRESSIVELY ON LOAD*/
 .menu:nth-child(1) .menu-item:nth-child(1) {
   animation: itemAppearing 300ms ease-in-out backwards;
-  animation-delay: -300ms;
+  animation-delay: 300ms;
 }
 .menu:nth-child(1) .menu-item:nth-child(2) {
   animation: itemAppearing 300ms ease-in-out backwards;
-  animation-delay: -150ms;
+  animation-delay: 450ms;
 }
 .menu:nth-child(1) .menu-item:nth-child(3) {
   animation: itemAppearing 300ms ease-in-out backwards;
-  animation-delay: 0ms;
-}
-.menu:nth-child(1) .menu-item:nth-child(4) {
-  animation: itemAppearing 300ms ease-in-out backwards;
-  animation-delay: 150ms;
-}
-
-.menu:nth-child(2) .menu-item:nth-child(1) {
-  animation: itemAppearing 300ms ease-in-out backwards;
-  animation-delay: 300ms;
-}
-.menu:nth-child(2) .menu-item:nth-child(2) {
-  animation: itemAppearing 300ms ease-in-out backwards;
-  animation-delay: 450ms;
-}
-.menu:nth-child(2) .menu-item:nth-child(3) {
-  animation: itemAppearing 300ms ease-in-out backwards;
   animation-delay: 600ms;
 }
-.menu:nth-child(2) .menu-item:nth-child(4) {
+.menu:nth-child(1) .menu-item:nth-child(4) {
   animation: itemAppearing 300ms ease-in-out backwards;
   animation-delay: 750ms;
 }
 
-.menu:nth-child(3) .menu-item:nth-child(1) {
+.menu:nth-child(2) .menu-item:nth-child(1) {
   animation: itemAppearing 300ms ease-in-out backwards;
   animation-delay: 900ms;
 }
-.menu:nth-child(3) .menu-item:nth-child(2) {
+.menu:nth-child(2) .menu-item:nth-child(2) {
   animation: itemAppearing 300ms ease-in-out backwards;
   animation-delay: 1050ms;
 }
-.menu:nth-child(3) .menu-item:nth-child(3) {
+.menu:nth-child(2) .menu-item:nth-child(3) {
   animation: itemAppearing 300ms ease-in-out backwards;
   animation-delay: 1200ms;
 }
-.menu:nth-child(3) .menu-item:nth-child(4) {
+.menu:nth-child(2) .menu-item:nth-child(4) {
   animation: itemAppearing 300ms ease-in-out backwards;
   animation-delay: 1350ms;
+}
+
+.menu:nth-child(3) .menu-item:nth-child(1) {
+  animation: itemAppearing 300ms ease-in-out backwards;
+  animation-delay: 1500ms;
+}
+.menu:nth-child(3) .menu-item:nth-child(2) {
+  animation: itemAppearing 300ms ease-in-out backwards;
+  animation-delay: 1650ms;
+}
+.menu:nth-child(3) .menu-item:nth-child(3) {
+  animation: itemAppearing 300ms ease-in-out backwards;
+  animation-delay: 1800ms;
+}
+.menu:nth-child(3) .menu-item:nth-child(4) {
+  animation: itemAppearing 300ms ease-in-out backwards;
+  animation-delay: 1950ms;
 }
 
 @keyframes itemAppearing {
