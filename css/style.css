@@ -599,11 +599,10 @@ section.menu .menu-item__description {
   position: relative;
   width: 100%;
   height: 60px;
-  white-space: nowrap;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  overflow: hidden;
+  white-space: nowrap;
   transition: all 300ms ease-in-out;
   /*            & h3 + p{
                   margin-top: 10px;
@@ -617,6 +616,8 @@ section.menu .menu-item__description .long {
 }
 section.menu .menu-item__description > * {
   width: calc(100% - 45px);
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 section.menu .menu-item__description p:last-child {
   position: absolute;
@@ -657,8 +658,6 @@ section.menu .menu-item:hover .menu-item__description {
 section.menu .menu-item:hover .menu-item__description > * {
   /*HIDE THE TOO LONG NAME WITH SUSPENSION POINTS*/
   white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 section.menu .menu-item:hover .menu-item__button {
   /*CHECKBOX APPEAR*/
