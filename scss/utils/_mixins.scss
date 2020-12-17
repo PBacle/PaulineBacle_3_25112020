@@ -13,3 +13,9 @@
         background: linear-gradient($angle, $colour-secondary, $colour-primary);
     }
 }
+
+@mixin gt-mobile {
+    @media screen and (min-width: map-get($breakpoints, mobile)){
+        @content;
+    }
+  }
