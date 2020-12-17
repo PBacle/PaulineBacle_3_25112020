@@ -353,6 +353,7 @@ ol .item:hover .fas--hover {
     display: grid;
     grid-gap: 20px;
     grid-template-columns: 1fr 1fr;
+    margin-bottom: 55px;
   }
 }
 #restaurants ul figure {
@@ -385,6 +386,7 @@ ol .item:hover .fas--hover {
 @media screen and (min-width: 650px) {
   #restaurants {
     background: #eaeaea;
+    padding-bottom: 10px;
   }
 }
 
