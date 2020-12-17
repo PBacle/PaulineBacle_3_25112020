@@ -10,7 +10,6 @@ body {
   background: #f6f6f6;
   text-align: center;
   font-size: 1.2em;
-  border: 1px red dashed;
   position: relative;
 }
 
@@ -572,6 +571,7 @@ section.menu h2 span {
 section.menu .menu-item {
   padding: 20px;
   display: flex;
+  box-sizing: border-box;
   cursor: pointer;
   /*ANIMATION: CHOOSING A MENU ITEM*/
 }
@@ -586,13 +586,25 @@ section.menu .menu-item label {
 section.menu .menu-item__description {
   position: relative;
   width: 100%;
+  height: 60px;
+  white-space: nowrap;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
   transition: all 300ms ease-in-out;
+  /*            & h3 + p{
+                  margin-top: 10px;
+              }*/
+}
+section.menu .menu-item__description--long {
+  height: 85px;
+}
+section.menu .menu-item__description .long {
+  white-space: normal;
 }
 section.menu .menu-item__description > * {
   width: calc(100% - 45px);
-}
-section.menu .menu-item__description h3 + p {
-  margin-top: 10px;
 }
 section.menu .menu-item__description p:last-child {
   position: absolute;
