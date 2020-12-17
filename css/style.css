@@ -577,7 +577,17 @@ section.menu .menu-item {
   cursor: pointer;
   /*ANIMATION: CHOOSING A MENU ITEM*/
 }
+section.menu .menu-item:after {
+  /*To make the pointer appear even on padding areas*/
+  content: "";
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0px;
+}
 section.menu .menu-item label {
+  /*To make the whole item clickable*/
   position: absolute;
   border-radius: 20px;
   top: 0;
