@@ -1,0 +1,135 @@
+/*VARIABLES*/
+$nummax-items:4;
+$price-width:40px;
+/***********/
+
+section.menu{
+    text-align: left;
+    background: $colour-bkg-primary;
+    padding: 0 $padding-std 0 $padding-std ;
+    @include gt-mobile{
+        width: calc(40%);
+        min-width: calc(#{map-get($breakpoints, smallest)} - 10px);
+    }        
+
+    & h2{
+        text-transform: uppercase;
+        font-weight: normal;
+        position: relative;
+        @include partial_underlining;
+    }
+
+    .menu-item{
+        display: flex;    
+        cursor:pointer;
+        &:after{ /*To make the pointer appear even on padding areas*/
+            content:'';
+            height:100%;width:100%;
+            position:absolute;top:0;left:0px;
+        }
+        & label{/*To make the whole item clickable*/
+            position: absolute;
+            border-radius: $border-radius-std;
+            top:0;bottom:0;left:0;right: 0;
+        }
+        &__description{
+            position: relative;
+            width: 100%;
+            padding:$padding-std;
+            box-sizing: border-box;
+            height: $menu-item-button-size;
+            &--long{height: calc(#{$menu-item-button-size} + #{$line-height});} 
+            display: flex;flex-direction: column;
+            justify-content: space-between; /*Especially important for .menu-item__description--long*/
+            white-space: nowrap;
+            .long{white-space: normal;}
+            transition: all $animation-dur--long ease-in-out;
+            & > * {
+                width: calc(100% - #{$price-width} - #{$padding-min});
+                overflow: hidden;text-overflow: ellipsis;    
+            }
+            & p:last-child{ 
+                position: absolute;
+                bottom:$padding-std;right: $padding-std; /*Put the price on the same baseline as info of menu item*/
+                width: $price-width;
+                text-align: right;
+                font-weight: bold;
+            }
+        }
+
+        &__button{
+            position: absolute;
+            top:0;bottom:0;right:0;
+            background: $colour-tertary;
+            border-radius: 0 $border-radius-std $border-radius-std 0;
+            display: flex;
+            width:0; /*will change with transition*/
+            opacity: 0; /*will change with transition*/
+            transition: all 300ms ease-in-out;
+            & span.fas{
+                margin:auto;
+                background: $colour-bkg-item;
+                border-radius: 50%;
+                color:$colour-tertary;
+                padding:$padding-min;
+                font-size: $fontsize-icon-small;
+            }
+            & input{ /*will be useful for functionnality but no need to display*/
+                position: absolute;
+                opacity: 0;
+            }
+        }
+
+        &:hover{ /*ANIMATION: CHOOSING A MENU ITEM*/
+            & .menu-item__description{
+                
+                width: calc(100% - #{$menu-item-button-size});
+                & > * {     /*HIDE THE TOO LONG NAME WITH SUSPENSION POINTS*/ 
+                    white-space: nowrap;
+                }
+            }
+            & .menu-item__button{  /*CHECKBOX APPEAR*/ 
+                opacity: 1;
+                width: $menu-item-button-size;
+                & .fas{
+                    animation: checkRotation $animation-dur--long ease-in-out   ;
+                }
+            }
+        }
+    }
+}
+
+@keyframes checkRotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    50%{
+        transform: rotate(90deg);
+    }  
+    100% {
+        transform: rotate(270deg);
+    }
+  }
+
+/*ANIMATION: MENU ITEMS APPEARING PROGRESSIVELY ON LOAD*/
+@for $i from 1 through 3 {
+    .menu:nth-child(#{$i}) {
+        @for $ii from 1 through $nummax-items {
+            & .menu-item:nth-child(#{$ii}){
+                animation: itemAppearing $animation-dur--long ease-in-out backwards ;
+                animation-delay: $animation-dur--short + ($animation-dur--short * $nummax-items) * ($i - 1) + $animation-dur--short * $ii;
+            }
+        }
+    }
+}
+
+@keyframes itemAppearing {
+    0% {
+        opacity: 0;
+        transform: translateY($padding-std);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+  }

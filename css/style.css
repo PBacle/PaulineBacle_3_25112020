@@ -1,3 +1,8 @@
+/*COLORS*/
+/*FONTS*/
+/*LAYOUT*/
+/*ANIMATION*/
+/*SCREEN RESOLUTION*/
 html, body {
   max-width: 100%;
   min-height: 100%;
@@ -390,6 +395,205 @@ ol .item:hover .fas--hover {
   }
 }
 
+/*VARIABLES*/
+/***********/
+section.menu {
+  text-align: left;
+  background: #f6f6f6;
+  padding: 0 20px 0 20px;
+}
+@media screen and (min-width: 650px) {
+  section.menu {
+    width: calc(40%);
+    min-width: calc(450px - 10px);
+  }
+}
+section.menu h2 {
+  text-transform: uppercase;
+  font-weight: normal;
+  position: relative;
+}
+section.menu h2 span {
+  position: absolute;
+  left: 0;
+  right: calc(100% - 2em);
+  bottom: -10px;
+  border-bottom: 4px solid #99E2D0;
+}
+section.menu .menu-item {
+  display: flex;
+  cursor: pointer;
+}
+section.menu .menu-item:after {
+  /*To make the pointer appear even on padding areas*/
+  content: "";
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0px;
+}
+section.menu .menu-item label {
+  /*To make the whole item clickable*/
+  position: absolute;
+  border-radius: 20px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+section.menu .menu-item__description {
+  position: relative;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /*Especially important for .menu-item__description--long*/
+  white-space: nowrap;
+  transition: all 300ms ease-in-out;
+}
+section.menu .menu-item__description--long {
+  height: calc(100px + 25px);
+}
+section.menu .menu-item__description .long {
+  white-space: normal;
+}
+section.menu .menu-item__description > * {
+  width: calc(100% - 40px - 5px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+section.menu .menu-item__description p:last-child {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  /*Put the price on the same baseline as info of menu item*/
+  width: 40px;
+  text-align: right;
+  font-weight: bold;
+}
+section.menu .menu-item__button {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background: #99E2D0;
+  border-radius: 0 20px 20px 0;
+  display: flex;
+  width: 0;
+  /*will change with transition*/
+  opacity: 0;
+  /*will change with transition*/
+  transition: all 300ms ease-in-out;
+}
+section.menu .menu-item__button span.fas {
+  margin: auto;
+  background: white;
+  border-radius: 50%;
+  color: #99E2D0;
+  padding: 5px;
+  font-size: 0.7em;
+}
+section.menu .menu-item__button input {
+  /*will be useful for functionnality but no need to display*/
+  position: absolute;
+  opacity: 0;
+}
+section.menu .menu-item:hover {
+  /*ANIMATION: CHOOSING A MENU ITEM*/
+}
+section.menu .menu-item:hover .menu-item__description {
+  width: calc(100% - 100px);
+}
+section.menu .menu-item:hover .menu-item__description > * {
+  /*HIDE THE TOO LONG NAME WITH SUSPENSION POINTS*/
+  white-space: nowrap;
+}
+section.menu .menu-item:hover .menu-item__button {
+  /*CHECKBOX APPEAR*/
+  opacity: 1;
+  width: 100px;
+}
+section.menu .menu-item:hover .menu-item__button .fas {
+  animation: checkRotation 300ms ease-in-out;
+}
+
+@keyframes checkRotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(90deg);
+  }
+  100% {
+    transform: rotate(270deg);
+  }
+}
+/*ANIMATION: MENU ITEMS APPEARING PROGRESSIVELY ON LOAD*/
+.menu:nth-child(1) .menu-item:nth-child(1) {
+  animation: itemAppearing 300ms ease-in-out backwards;
+  animation-delay: 300ms;
+}
+.menu:nth-child(1) .menu-item:nth-child(2) {
+  animation: itemAppearing 300ms ease-in-out backwards;
+  animation-delay: 450ms;
+}
+.menu:nth-child(1) .menu-item:nth-child(3) {
+  animation: itemAppearing 300ms ease-in-out backwards;
+  animation-delay: 600ms;
+}
+.menu:nth-child(1) .menu-item:nth-child(4) {
+  animation: itemAppearing 300ms ease-in-out backwards;
+  animation-delay: 750ms;
+}
+
+.menu:nth-child(2) .menu-item:nth-child(1) {
+  animation: itemAppearing 300ms ease-in-out backwards;
+  animation-delay: 900ms;
+}
+.menu:nth-child(2) .menu-item:nth-child(2) {
+  animation: itemAppearing 300ms ease-in-out backwards;
+  animation-delay: 1050ms;
+}
+.menu:nth-child(2) .menu-item:nth-child(3) {
+  animation: itemAppearing 300ms ease-in-out backwards;
+  animation-delay: 1200ms;
+}
+.menu:nth-child(2) .menu-item:nth-child(4) {
+  animation: itemAppearing 300ms ease-in-out backwards;
+  animation-delay: 1350ms;
+}
+
+.menu:nth-child(3) .menu-item:nth-child(1) {
+  animation: itemAppearing 300ms ease-in-out backwards;
+  animation-delay: 1500ms;
+}
+.menu:nth-child(3) .menu-item:nth-child(2) {
+  animation: itemAppearing 300ms ease-in-out backwards;
+  animation-delay: 1650ms;
+}
+.menu:nth-child(3) .menu-item:nth-child(3) {
+  animation: itemAppearing 300ms ease-in-out backwards;
+  animation-delay: 1800ms;
+}
+.menu:nth-child(3) .menu-item:nth-child(4) {
+  animation: itemAppearing 300ms ease-in-out backwards;
+  animation-delay: 1950ms;
+}
+
+@keyframes itemAppearing {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
 header {
   display: flex;
   justify-content: center;
@@ -539,206 +743,14 @@ form h1 {
   padding: 0 20px 0 20px;
   border-radius: 25px 25px 0 0;
 }
+form h1 span {
+  font-size: 1em;
+}
 @media screen and (min-width: 650px) {
   form div {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
-  }
-}
-
-section.menu {
-  text-align: left;
-  background: #f6f6f6;
-  padding: 0 20px 0 20px;
-}
-@media screen and (min-width: 650px) {
-  section.menu {
-    width: calc(40%);
-    min-width: 436px;
-  }
-}
-section.menu h2 {
-  text-transform: uppercase;
-  font-weight: normal;
-  position: relative;
-}
-section.menu h2 span {
-  position: absolute;
-  left: 0;
-  right: calc(100% - 4rem);
-  bottom: -10px;
-  border-bottom: 4px solid #99E2D0;
-}
-section.menu .menu-item {
-  padding: 20px;
-  display: flex;
-  box-sizing: border-box;
-  cursor: pointer;
-  /*ANIMATION: CHOOSING A MENU ITEM*/
-}
-section.menu .menu-item:after {
-  /*To make the pointer appear even on padding areas*/
-  content: "";
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0px;
-}
-section.menu .menu-item label {
-  /*To make the whole item clickable*/
-  position: absolute;
-  border-radius: 20px;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-section.menu .menu-item__description {
-  position: relative;
-  width: 100%;
-  height: 60px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  white-space: nowrap;
-  transition: all 300ms ease-in-out;
-  /*            & h3 + p{
-                  margin-top: 10px;
-              }*/
-}
-section.menu .menu-item__description--long {
-  height: 85px;
-}
-section.menu .menu-item__description .long {
-  white-space: normal;
-}
-section.menu .menu-item__description > * {
-  width: calc(100% - 45px);
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-section.menu .menu-item__description p:last-child {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 40px;
-  text-align: right;
-  font-weight: bold;
-}
-section.menu .menu-item__button {
-  opacity: 0;
-  width: 0;
-  transition: all 300ms ease-in-out;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  background: #99E2D0;
-  border-radius: 0 20px 20px 0;
-  display: flex;
-  transition: all 300ms ease-in-out;
-}
-section.menu .menu-item__button span.fas {
-  margin: auto;
-  background: white;
-  border-radius: 50%;
-  color: #99E2D0;
-  padding: 5px;
-  font-size: 0.7em;
-}
-section.menu .menu-item__button input {
-  position: absolute;
-  opacity: 0;
-}
-section.menu .menu-item:hover .menu-item__description {
-  width: calc(100% - 100px);
-}
-section.menu .menu-item:hover .menu-item__description > * {
-  /*HIDE THE TOO LONG NAME WITH SUSPENSION POINTS*/
-  white-space: nowrap;
-}
-section.menu .menu-item:hover .menu-item__button {
-  /*CHECKBOX APPEAR*/
-  opacity: 1;
-  width: 100px;
-}
-section.menu .menu-item:hover .menu-item__button .fas {
-  animation: checkRotation 300ms ease-in-out;
-}
-
-@keyframes checkRotation {
-  0% {
-    transform: rotate(0deg);
-  }
-  50% {
-    transform: rotate(90deg);
-  }
-  100% {
-    transform: rotate(270deg);
-  }
-}
-/*ANIMATION: MENU ITEMS APPEARING PROGRESSIVELY ON LOAD*/
-.menu:nth-child(1) .menu-item:nth-child(1) {
-  animation: itemAppearing 300ms ease-in-out backwards;
-  animation-delay: 300ms;
-}
-.menu:nth-child(1) .menu-item:nth-child(2) {
-  animation: itemAppearing 300ms ease-in-out backwards;
-  animation-delay: 450ms;
-}
-.menu:nth-child(1) .menu-item:nth-child(3) {
-  animation: itemAppearing 300ms ease-in-out backwards;
-  animation-delay: 600ms;
-}
-.menu:nth-child(1) .menu-item:nth-child(4) {
-  animation: itemAppearing 300ms ease-in-out backwards;
-  animation-delay: 750ms;
-}
-
-.menu:nth-child(2) .menu-item:nth-child(1) {
-  animation: itemAppearing 300ms ease-in-out backwards;
-  animation-delay: 900ms;
-}
-.menu:nth-child(2) .menu-item:nth-child(2) {
-  animation: itemAppearing 300ms ease-in-out backwards;
-  animation-delay: 1050ms;
-}
-.menu:nth-child(2) .menu-item:nth-child(3) {
-  animation: itemAppearing 300ms ease-in-out backwards;
-  animation-delay: 1200ms;
-}
-.menu:nth-child(2) .menu-item:nth-child(4) {
-  animation: itemAppearing 300ms ease-in-out backwards;
-  animation-delay: 1350ms;
-}
-
-.menu:nth-child(3) .menu-item:nth-child(1) {
-  animation: itemAppearing 300ms ease-in-out backwards;
-  animation-delay: 1500ms;
-}
-.menu:nth-child(3) .menu-item:nth-child(2) {
-  animation: itemAppearing 300ms ease-in-out backwards;
-  animation-delay: 1650ms;
-}
-.menu:nth-child(3) .menu-item:nth-child(3) {
-  animation: itemAppearing 300ms ease-in-out backwards;
-  animation-delay: 1800ms;
-}
-.menu:nth-child(3) .menu-item:nth-child(4) {
-  animation: itemAppearing 300ms ease-in-out backwards;
-  animation-delay: 1950ms;
-}
-
-@keyframes itemAppearing {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0px);
   }
 }
 

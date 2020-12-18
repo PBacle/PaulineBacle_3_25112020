@@ -1,3 +1,4 @@
+/*COLORS*/
 $colour-primary:#9356DC;
 $colour-secondary:#FF79DA;
 $colour-secondary--lighter:#f5edff;
@@ -5,18 +6,35 @@ $colour-tertary:#99E2D0;
 $colour-bkg-primary:#f6f6f6;
 $colour-bkg-primary--darker:#eaeaea;
 $colour-bkg-secondary:#353535;
+$colour-bkg-item:white;
+
+/*FONTS*/
 $font-logo:Shrikhand;
 $font-main:Roboto;
-
 $fontsize-icon:1.3em;
+$fontsize-icon-medium:1em;
+$fontsize-icon-small:0.7em;
 $fontsize-logo:20px;
+
+/*LAYOUT*/
+$title-partial-underlining:2em;
 
 $footer-height:200px;
 $header-height:60px;
+$menu-item-button-size:100px;
+$line-height:25px;
 
+$border-radius-std:20px;
 $margin-min:20px;
 $padding-min:5px;
+$padding-std:20px;
 
+/*ANIMATION*/
+$animation-dur--short:150ms;
+$animation-dur--long:300ms;
+
+/*SCREEN RESOLUTION*/
 $breakpoints: (
+  smallest:450px,
   mobile: 650px
 );

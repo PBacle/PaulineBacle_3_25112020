@@ -1,7 +1,3 @@
-$nummax-items:4;
-$animation-dur--short:150ms;
-$animation-dur--long:300ms;
-
 form{
     & h1{
         @include fontDef($font-logo);
@@ -15,6 +11,9 @@ form{
         background: $colour-bkg-primary;
         padding: 0 20px 0 20px ;
         border-radius: 25px 25px  0 0 ;
+        & span{
+            font-size:$fontsize-icon-medium;
+        }
     }
     & div{
         @include gt-mobile{
@@ -25,145 +24,5 @@ form{
     }
 }
 
-section.menu{
-    text-align: left;
-    background: $colour-bkg-primary;
-    padding: 0 20px 0 20px ;
-    @include gt-mobile{
-        width: calc(40%);
-        min-width: 436px;
-    }        
-
-
-    & h2{
-        text-transform: uppercase;
-        font-weight: normal;
-        position: relative;
-        & span{
-            position: absolute;
-            left:0;right:calc(100% - 4rem);
-            bottom:-10px;
-            border-bottom: 4px solid $colour-tertary ; 
-        }   
-    }
-
-    .menu-item{
-        padding:20px;
-        display: flex;    
-        box-sizing: border-box;
-        cursor:pointer;
-        &:after{ /*To make the pointer appear even on padding areas*/
-            content:'';
-            height:100%;width:100%;
-            position:absolute;top:0;left:0px;
-        }
-        & label{/*To make the whole item clickable*/
-            position: absolute;
-            border-radius: 20px;
-            top:0;bottom:0;left:0;right: 0;
-        }
-        &__description{
-            position: relative;
-            width: 100%;
-            height: 60px;
-            &--long{height: 85px;} 
-            display: flex;flex-direction: column;
-            justify-content: space-between;
-            white-space: nowrap;
-            .long{white-space: normal;}
-            transition: all $animation-dur--long ease-in-out;
-            & > * {
-                width: calc(100% - 45px);
-                overflow: hidden;
-                text-overflow: ellipsis;    
-            }
-/*            & h3 + p{
-                margin-top: 10px;
-            }*/
-            & p:last-child{
-                position: absolute;
-                bottom:0;right: 0;
-                width: 40px;
-                text-align: right;
-                font-weight: bold;
-            }
-        }
-
-        &__button{
-            opacity: 0;
-            width:0;
-            transition: all 300ms ease-in-out;
-            position: absolute;
-            top:0;bottom:0;right:0;
-            background: $colour-tertary;
-            border-radius: 0 20px 20px 0;
-            display: flex;
-            transition: all 300ms ease-in-out;
-            & span.fas{
-                margin:auto;
-                background: white;
-                border-radius: 50%;
-                color:$colour-tertary;
-                padding:5px;
-                font-size: 0.7em;
-            }
-            & input{
-                position: absolute;
-                opacity: 0;
-            }
-        }
-
-        /*ANIMATION: CHOOSING A MENU ITEM*/
-        &:hover{                
-            & .menu-item__description{
-                width: calc(100% - 100px);
-                & > * {     /*HIDE THE TOO LONG NAME WITH SUSPENSION POINTS*/ 
-                    white-space: nowrap;
-                }
-            }
-            & .menu-item__button{  /*CHECKBOX APPEAR*/ 
-                opacity: 1;
-                width: 100px;
-                & .fas{
-                    animation: checkRotation $animation-dur--long ease-in-out   ;
-                }
-            }
-        }
-    }
-}
-
-@keyframes checkRotation {
-    0% {
-        transform: rotate(0deg);
-    }
-    50%{
-        transform: rotate(90deg);
-    }  
-    100% {
-        transform: rotate(270deg);
-    }
-  }
   
 
-/*ANIMATION: MENU ITEMS APPEARING PROGRESSIVELY ON LOAD*/
-@for $i from 1 through 3 {
-    .menu:nth-child(#{$i}) {
-        @for $ii from 1 through $nummax-items {
-            & .menu-item:nth-child(#{$ii}){
-                animation: itemAppearing $animation-dur--long ease-in-out backwards ;
-                animation-delay: $animation-dur--short + ($animation-dur--short * $nummax-items) * ($i - 1) + $animation-dur--short * $ii;
-            }
-        }
-    }
-}
-
-@keyframes itemAppearing {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0px);
-    }
-  }

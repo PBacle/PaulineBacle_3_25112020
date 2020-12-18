@@ -19,3 +19,12 @@
         @content;
     }
   }
+
+  @mixin partial_underlining($partial-underlining: $title-partial-underlining){
+    & span{
+        position: absolute;
+        left:0;right:calc(100% - #{$partial-underlining});
+        bottom:-10px;
+        border-bottom: 4px solid $colour-tertary ; 
+    }  
+}
