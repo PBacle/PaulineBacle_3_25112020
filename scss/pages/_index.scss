@@ -1,15 +1,15 @@
 #localisation{
-    height:50px;
+    height:$header-height;
     display: flex;
     align-items: center;justify-content: center;
     background: $colour-bkg-primary--darker;
     
     & input[type="text"]{
         font-weight: bold;
-        font-size: 0.9em;
+        font-size: $fontsize-small;
         border:none;
-        margin:0 15px ;
-        width: 130px;
+        margin:0 $margin-std ;
+        width: 150px; /*To improve: should adjust depending on the entry*/
         background: transparent;
     }
     & input[type="submit"]{
@@ -18,9 +18,9 @@
 }
 
 #presentation{
-    height:285px;
     display: flex;flex-direction: column;
     align-items: center;justify-content: center;
+    box-sizing: border-box;
     & h1{
         text-align: center;
     }
@@ -29,13 +29,14 @@
         color: lighten(black, 30);
     }
     @include gt-mobile{
-        width: calc(100% - 320px - 80px);
+        width: calc(100% - #{$section-width-min});
     }
 }
 
 #fonctionnement{
     @include gt-mobile{
-        width: 320px;
-        position: absolute;right:0px;top:110px;
+        box-sizing: border-box;
+        width: $section-width-min;
+        position: absolute;right:0px;top:calc(#{$header-height} + #{$header-height});
     }
 }

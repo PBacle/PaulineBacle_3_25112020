@@ -9,13 +9,12 @@ html,body{
 body{
     background: $colour-bkg-primary;
     text-align: center;
-    font-size: 1.2em;
+    font-size: $fontsize-std;
     position:relative
 }
 
 *{
-	margin:0;
-	padding: 0;
+	margin:0;padding: 0;
 }
 
 a{
@@ -28,24 +27,24 @@ ul{
 }
 
 h1{
-    font-size: 1.4em;
-    margin:20px 75px ;
+    font-size: $fontsize-h1;
+    margin:$margin-std $margin-huge ;
 }
 
 h2{
-    font-size: 1.3em;
-    padding-top: 50px;
-    margin-bottom: 30px;
+    font-size: $fontsize-h2;
+    padding-top: $padding-large;
+    margin-bottom: $margin-large;
 }
 
 h3{
-    font-size: 1.2em;
+    font-size: $fontsize-std;
 }
 
 img{
     object-fit: cover;
     width:100%;
-    max-height: 250px;
+    max-height: $img-height;
 }
 
 section:nth-of-type(even){
@@ -54,6 +53,6 @@ section:nth-of-type(even){
 
 section{
     text-align: left;
-    padding:0 20px 0 20px ;
-    min-height: 440px;
+    padding:0 $padding-std 0 $padding-std ;
+    min-height: $section-height;
 }

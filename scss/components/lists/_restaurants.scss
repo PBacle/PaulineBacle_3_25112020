@@ -29,9 +29,9 @@
         }
         @include gt-mobile{
             display: grid;
-            grid-gap : 20px;
+            grid-gap : $padding-std;
             grid-template-columns: 1fr 1fr;
-            margin-bottom: 55px;
+            margin-bottom: calc(#{$header-height} - #{$padding-min});
         }    
         & figure{
             height:250px;
@@ -43,7 +43,7 @@
             min-width:100%;
             & img{
                 max-height: calc(100% - 90px);
-                border-radius: 25px 25px 0  0;
+                border-radius: $border-radius-large $border-radius-large 0  0;
             }
             & figcaption{
                 box-sizing: border-box;
@@ -51,11 +51,11 @@
                 max-height: 90px;
                 display: flex;
                 flex-direction: column;
-                padding:15px;
+                padding:$padding-std;
                 position:relative;
                 & .fa-heart{
                     line-height: 60px;
-                    margin: 15px 0px;
+                    margin: $padding-std $padding-std $padding-std 0px ;
                 }
             }
         }

@@ -4,7 +4,7 @@ footer{
         height:100px;
     }
     background-color: $colour-bkg-secondary;
-    padding: 0 $margin-min 0 $margin-min  ;
+    padding: 0 $padding-std 0 $padding-std  ;
     display: flex;
     flex-direction: column;
     text-align: left;
@@ -17,11 +17,7 @@ footer *{
 footer p{
     @include fontDef($font-logo);
     padding:0 $padding-min 0 $padding-min;
-    line-height: 65px;
-    @include gt-mobile{
-        line-height: 50px;
-/*        text-align: center;*/
-    }
+    line-height: $header-height;
     font-size: $fontsize-logo;
 }
 
@@ -37,21 +33,20 @@ footer ul{
 }
 
 footer li{
-    font-size: 15px;
+    font-size: $fontsize-tiny;
     vertical-align: middle;
 }
 
 
 footer span.fas{
     display: inline-block;
-    width: 12px;
-    line-height: 15px;
-    margin-right: 10px;
-    font-size: 12px;
+    width: $fontsize-tiny;
+    margin-right: $padding-small;
+    font-size: $fontsize-tiny;
 }
 
 footer ul > li + li{
-    margin-top: 10px;
+    margin-top: $padding-small;
     @include gt-mobile{
         margin-top: 0px;
     }

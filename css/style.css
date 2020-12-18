@@ -1,7 +1,12 @@
 /*COLORS*/
 /*FONTS*/
 /*LAYOUT*/
+/*px*/
 /*ANIMATION*/
+/*SCREEN RESOLUTION*/
+/*COLORS*/
+/*FONTS*/
+/*LAYOUT*/
 /*SCREEN RESOLUTION*/
 html, body {
   max-width: 100%;
@@ -183,19 +188,19 @@ div#loader {
   color: white;
   font-weight: bold;
   text-align: center;
-  border-radius: 25px;
-  padding: 10px;
+  border-radius: 30px;
+  padding: 20px;
   width: 220px;
   background: linear-gradient(180deg, #FF79DA, #9356DC);
-  box-shadow: 3px 5px 5px #d0d0d0;
-  font-size: 0.9em;
+  box-shadow: calc(5px - 2px) 5px 5px #d0d0d0;
+  font-size: 1em;
   position: relative;
   margin-top: 50px;
   margin-bottom: 70px;
 }
 .button__bg {
   background: white;
-  border-radius: 25px;
+  border-radius: 30px;
   position: absolute;
   top: 0;
   right: 0;
@@ -203,10 +208,10 @@ div#loader {
   left: 0;
   z-index: 1;
   opacity: 0;
-  transition: opacity 250ms;
+  transition: opacity 300ms;
 }
 .button:hover {
-  box-shadow: 4px 6px 6px #d0d0d0;
+  box-shadow: calc(5px + 1px) calc(5px + 2px) calc(5px + 2px) #d0d0d0;
 }
 .button:hover .button__bg, .button:hover .fas {
   opacity: 0.25;
@@ -215,10 +220,9 @@ div#loader {
 .fa-heart {
   cursor: pointer;
   display: inline-block;
-  padding: 0 20px 0 20px;
-  font-size: 1.4em;
+  font-size: 1.3em;
   position: absolute;
-  bottom: 2px;
+  bottom: 0;
   right: 0;
 }
 .fa-heart::before {
@@ -248,14 +252,14 @@ div#loader {
   list-style: none;
 }
 #content ol li, #content ul li {
-  box-shadow: 3px 5px 5px #e6e6e6;
-  border-radius: 25px;
+  box-shadow: calc(5px - 2px) 5px 5px #e6e6e6;
+  border-radius: 30px;
   position: relative;
   z-index: 1;
   background-color: white;
 }
 #content ol li + li, #content ul li + li {
-  margin-top: 22.5px;
+  margin-top: 20px;
 }
 
 ol {
@@ -265,7 +269,7 @@ ol {
 ol .item {
   background: transparent;
   counter-increment: item;
-  line-height: 74px;
+  line-height: 75px;
   font-weight: bold;
   z-index: 1;
 }
@@ -283,7 +287,7 @@ ol .item:before {
 }
 ol .item .fas {
   color: gray;
-  line-height: 74px;
+  line-height: 75px;
   padding: 0 20px 0 20px;
   position: relative;
   z-index: 0;
@@ -297,19 +301,19 @@ ol .item .fas--hover {
 }
 ol .item__bg {
   background: #f6f6f6;
-  border-radius: 25px;
+  border-radius: 30px;
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
   z-index: -1;
-  transition: opacity 350ms;
+  transition: opacity 300ms;
 }
 ol .item__bg--hover {
   opacity: 0;
   background: #9356DC;
-  transition: opacity 350ms;
+  transition: opacity 300ms;
 }
 ol .item:hover .fas {
   opacity: 0;
@@ -358,7 +362,7 @@ ol .item:hover .fas--hover {
     display: grid;
     grid-gap: 20px;
     grid-template-columns: 1fr 1fr;
-    margin-bottom: 55px;
+    margin-bottom: calc(60px - 5px);
   }
 }
 #restaurants ul figure {
@@ -373,7 +377,7 @@ ol .item:hover .fas--hover {
 }
 #restaurants ul figure img {
   max-height: calc(100% - 90px);
-  border-radius: 25px 25px 0 0;
+  border-radius: 30px 30px 0 0;
 }
 #restaurants ul figure figcaption {
   box-sizing: border-box;
@@ -381,12 +385,12 @@ ol .item:hover .fas--hover {
   max-height: 90px;
   display: flex;
   flex-direction: column;
-  padding: 15px;
+  padding: 20px;
   position: relative;
 }
 #restaurants ul figure figcaption .fa-heart {
   line-height: 60px;
-  margin: 15px 0px;
+  margin: 20px 20px 20px 0px;
 }
 @media screen and (min-width: 650px) {
   #restaurants {
@@ -417,7 +421,7 @@ section.menu h2 span {
   position: absolute;
   left: 0;
   right: calc(100% - 2em);
-  bottom: -10px;
+  bottom: -5px;
   border-bottom: 4px solid #99E2D0;
 }
 section.menu .menu-item {
@@ -600,7 +604,7 @@ header {
   position: relative;
   height: 60px;
   max-width: 100%;
-  box-shadow: 0 4px 4px rgba(53, 53, 53, 0.3);
+  box-shadow: 0 5px 5px rgba(53, 53, 53, 0.3);
   background-color: white;
 }
 header img {
@@ -611,7 +615,7 @@ header img {
 header a {
   position: absolute;
   left: 0;
-  margin-left: 15px;
+  margin-left: 20px;
   font-size: 1.3em;
   line-height: 60px;
 }
@@ -637,14 +641,8 @@ footer * {
 footer p {
   font-family: Shrikhand, cursive;
   padding: 0 5px 0 5px;
-  line-height: 65px;
+  line-height: 60px;
   font-size: 20px;
-}
-@media screen and (min-width: 650px) {
-  footer p {
-    line-height: 50px;
-    /*        text-align: center;*/
-  }
 }
 
 footer ul {
@@ -661,16 +659,15 @@ footer ul {
 }
 
 footer li {
-  font-size: 15px;
+  font-size: 0.8em;
   vertical-align: middle;
 }
 
 footer span.fas {
   display: inline-block;
-  width: 12px;
-  line-height: 15px;
+  width: 0.8em;
   margin-right: 10px;
-  font-size: 12px;
+  font-size: 0.8em;
 }
 
 footer ul > li + li {
@@ -683,7 +680,7 @@ footer ul > li + li {
 }
 
 #localisation {
-  height: 50px;
+  height: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -691,10 +688,11 @@ footer ul > li + li {
 }
 #localisation input[type=text] {
   font-weight: bold;
-  font-size: 0.9em;
+  font-size: 1em;
   border: none;
-  margin: 0 15px;
-  width: 130px;
+  margin: 0 20px;
+  width: 150px;
+  /*To improve: should adjust depending on the entry*/
   background: transparent;
 }
 #localisation input[type=submit] {
@@ -702,11 +700,11 @@ footer ul > li + li {
 }
 
 #presentation {
-  height: 285px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  box-sizing: border-box;
 }
 #presentation h1 {
   text-align: center;
@@ -717,16 +715,17 @@ footer ul > li + li {
 }
 @media screen and (min-width: 650px) {
   #presentation {
-    width: calc(100% - 320px - 80px);
+    width: calc(100% - 360px);
   }
 }
 
 @media screen and (min-width: 650px) {
   #fonctionnement {
-    width: 320px;
+    box-sizing: border-box;
+    width: 360px;
     position: absolute;
     right: 0px;
-    top: 110px;
+    top: calc(60px + 60px);
   }
 }
 
@@ -735,16 +734,19 @@ form h1 {
   margin: 0;
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: flex-start;
   position: relative;
-  height: 65px;
-  margin-top: -25px;
+  height: calc(60px - 30px);
+  margin-top: -30px;
   background: #f6f6f6;
-  padding: 0 20px 0 20px;
-  border-radius: 25px 25px 0 0;
+  padding: 30px 20px 5px 20px;
+  border-radius: 30px 30px 0 0;
 }
-form h1 span {
+form h1 span.fa-heart {
   font-size: 1em;
+  margin-right: 20px;
+  margin-bottom: 5px;
+  font-size: inherit;
 }
 @media screen and (min-width: 650px) {
   form div {

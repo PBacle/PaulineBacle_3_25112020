@@ -1,32 +1,32 @@
 ol{
     counter-reset: item 0;
-    padding:0 0 0 12.5px;
+    padding:0 0 0 #{$ol-counter-height / 2}px;
     & .item{
         background:transparent;
         counter-increment: item;
-        line-height:74px;
+        line-height:#{$ol-counter-height*3}px;
         font-weight: bold;
         z-index: 1; 
         &:before {
             content: counter(item);
             border-radius: 100%;
             background-color: $colour-primary;
-            width: 25px;line-height: 25px;                            
+            width: #{$ol-counter-height}px;line-height: #{$ol-counter-height}px;                            
             text-align: center;
-            margin-left: -12.5px;
+            margin-left: -#{$ol-counter-height / 2}px;
             color:white;
             font-weight: bold;
             display: inline-block;
         }
         & .fas{
             color:lighten(#000000,50);
-            line-height:74px;
-            padding:0 20px 0 20px;
+            line-height:#{$ol-counter-height*3}px;
+            padding:0 $padding-std 0 $padding-std;
             position: relative;
             z-index: 0;
             &--hover{
                 position: absolute;
-                left: 12.5px;
+                left: #{$ol-counter-height / 2}px;
                 z-index: 10; 
                 color:$colour-primary;
                 opacity: 0.3;
@@ -35,15 +35,15 @@ ol{
 
         &__bg{
             background:$colour-bkg-primary;
-            border-radius: 25px;
+            border-radius: $border-radius-large;
             position: absolute;
             top: 0;right: 0; bottom: 0;left: 0;
             z-index: -1;
-            transition: opacity 350ms ;
+            transition: opacity $animation-dur--medium ;
             &--hover{
                 opacity: 0;
                 background: $colour-primary;
-                transition: opacity 350ms ;
+                transition: opacity $animation-dur--medium ;
             }
         }
         &:hover {

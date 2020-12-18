@@ -4,15 +4,18 @@ form{
         margin:0;
         display: flex;
         justify-content: space-between;
-        align-items: flex-end;
+        align-items: flex-start;
         position:relative;
-        height: 65px;
-        margin-top: -25px;
+        height: calc(#{$header-height} - #{$border-radius-large});
+        margin-top: -$border-radius-large;
         background: $colour-bkg-primary;
-        padding: 0 20px 0 20px ;
-        border-radius: 25px 25px  0 0 ;
-        & span{
+        padding: $border-radius-large $padding-std $padding-min $padding-std ;
+        border-radius: $border-radius-large $border-radius-large  0 0 ;
+        & span.fa-heart{
             font-size:$fontsize-icon-medium;
+            margin-right: $padding-std;
+            margin-bottom: $padding-min;
+            font-size: inherit;
         }
     }
     & div{

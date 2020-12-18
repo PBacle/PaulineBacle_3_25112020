@@ -11,27 +11,51 @@ $colour-bkg-item:white;
 /*FONTS*/
 $font-logo:Shrikhand;
 $font-main:Roboto;
+
+$fontsize-tiny: 0.8em;
+$fontsize-small: 1em;
+$fontsize-std:1.2em;
+$fontsize-h2:1.3em;
+$fontsize-h1:1.4em;
+
 $fontsize-icon:1.3em;
 $fontsize-icon-medium:1em;
 $fontsize-icon-small:0.7em;
+
 $fontsize-logo:20px;
 
 /*LAYOUT*/
 $title-partial-underlining:2em;
+$underlining:4px;
 
+$section-width-min:360px;
+$section-height:440px;
+$img-height:250px;
+$footer-height-small:100px;
 $footer-height:200px;
 $header-height:60px;
+$header-logo-width:165px;
 $menu-item-button-size:100px;
+
+$ol-counter-height:25; /*px*/
 $line-height:25px;
 
 $border-radius-std:20px;
-$margin-min:20px;
+$border-radius-large:30px;
+
+$margin-std:20px;
+$margin-large:30px;
+$margin-huge:75px;
+
 $padding-min:5px;
+$padding-small:10px;
 $padding-std:20px;
+$padding-large:50px;
 
 /*ANIMATION*/
-$animation-dur--short:150ms;
-$animation-dur--long:300ms;
+$animation-dur--medium:300ms;
+$animation-dur--short:$animation-dur--medium / 2;
+$animation-dur--long:2*$animation-dur--medium;
 
 /*SCREEN RESOLUTION*/
 $breakpoints: (

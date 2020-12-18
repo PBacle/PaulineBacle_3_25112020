@@ -43,7 +43,7 @@ section.menu{
             justify-content: space-between; /*Especially important for .menu-item__description--long*/
             white-space: nowrap;
             .long{white-space: normal;}
-            transition: all $animation-dur--long ease-in-out;
+            transition: all $animation-dur--medium ease-in-out;
             & > * {
                 width: calc(100% - #{$price-width} - #{$padding-min});
                 overflow: hidden;text-overflow: ellipsis;    
@@ -65,7 +65,7 @@ section.menu{
             display: flex;
             width:0; /*will change with transition*/
             opacity: 0; /*will change with transition*/
-            transition: all 300ms ease-in-out;
+            transition: all $animation-dur--medium ease-in-out;
             & span.fas{
                 margin:auto;
                 background: $colour-bkg-item;
@@ -92,7 +92,7 @@ section.menu{
                 opacity: 1;
                 width: $menu-item-button-size;
                 & .fas{
-                    animation: checkRotation $animation-dur--long ease-in-out   ;
+                    animation: checkRotation $animation-dur--medium ease-in-out   ;
                 }
             }
         }
@@ -116,7 +116,7 @@ section.menu{
     .menu:nth-child(#{$i}) {
         @for $ii from 1 through $nummax-items {
             & .menu-item:nth-child(#{$ii}){
-                animation: itemAppearing $animation-dur--long ease-in-out backwards ;
+                animation: itemAppearing $animation-dur--medium ease-in-out backwards ;
                 animation-delay: $animation-dur--short + ($animation-dur--short * $nummax-items) * ($i - 1) + $animation-dur--short * $ii;
             }
         }

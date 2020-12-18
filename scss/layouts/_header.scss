@@ -4,10 +4,10 @@ header{
     position: relative;
     height:$header-height;
     max-width: 100%;
-    box-shadow: 0 4px 4px rgba($colour-bkg-secondary, 0.3);
+    box-shadow: 0 #{$padding-min} #{$padding-min} rgba($colour-bkg-secondary, 0.3);
     background-color: white;
     & img{
-        max-width: 165px;
+        max-width: $header-logo-width;
         max-height: 100%;
         margin: auto;
     }
@@ -15,7 +15,7 @@ header{
     & a{
         position:absolute;
         left:0;
-        margin-left: 15px;
+        margin-left: $margin-std;
         font-size: $fontsize-icon;
         line-height: $header-height;
     }
