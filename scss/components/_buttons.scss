@@ -10,8 +10,8 @@
     box-shadow: calc(#{$padding-min} - 2px) #{$padding-min} #{$padding-min} darken($colour-bkg-primary, 15);
     font-size: $fontsize-small;
     position: relative;
-    margin-top: 50px;
-    margin-bottom: 70px;
+    margin-top: $section-monoline-height;
+    margin-bottom: calc(#{$section-monoline-height} + #{$line-height});
 
     &__bg{
         background: white;
@@ -31,7 +31,7 @@
 .fa-heart{
     cursor:pointer;
     display: inline-block;
-    font-size: $fontsize-icon;
+    font-size: $fontsize-icon-large;
     position:absolute;
     bottom:0;right: 0;
 &::before{
@@ -56,8 +56,7 @@
     }                    
 }
 
-/* LIST ITEMS
-*/
+/* LIST ITEMS*/
 #content ol, #content ul{
     list-style: none;
     & li{
@@ -68,6 +67,6 @@
         background-color: white;
     }
     & li + li {     
-        margin-top: $margin-std;
+        margin-top: $line-height;
     }
 }

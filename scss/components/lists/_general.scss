@@ -1,32 +1,32 @@
 ol{
     counter-reset: item 0;
-    padding:0 0 0 #{$ol-counter-height / 2}px;
+    padding:0 0 0 #{$ol-counter-size / 2}px;
     & .item{
         background:transparent;
         counter-increment: item;
-        line-height:#{$ol-counter-height*3}px;
+        line-height:#{$ol-counter-size*3}px;
         font-weight: bold;
         z-index: 1; 
         &:before {
             content: counter(item);
             border-radius: 100%;
             background-color: $colour-primary;
-            width: #{$ol-counter-height}px;line-height: #{$ol-counter-height}px;                            
+            width: #{$ol-counter-size}px;line-height: #{$ol-counter-size}px;                            
             text-align: center;
-            margin-left: -#{$ol-counter-height / 2}px;
+            margin-left: -#{$ol-counter-size / 2}px;
             color:white;
             font-weight: bold;
             display: inline-block;
         }
         & .fas{
             color:lighten(#000000,50);
-            line-height:#{$ol-counter-height*3}px;
+            line-height:#{$ol-counter-size*3}px;
             padding:0 $padding-std 0 $padding-std;
             position: relative;
             z-index: 0;
             &--hover{
                 position: absolute;
-                left: #{$ol-counter-height / 2}px;
+                left: #{$ol-counter-size / 2}px;
                 z-index: 10; 
                 color:$colour-primary;
                 opacity: 0.3;

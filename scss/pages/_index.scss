@@ -1,5 +1,5 @@
 #localisation{
-    height:$header-height;
+    height:$section-monoline-height;
     display: flex;
     align-items: center;justify-content: center;
     background: $colour-bkg-primary--darker;
@@ -8,7 +8,7 @@
         font-weight: bold;
         font-size: $fontsize-small;
         border:none;
-        margin:0 $margin-std ;
+        margin:0 $fontsize-small ;
         width: 150px; /*To improve: should adjust depending on the entry*/
         background: transparent;
     }
@@ -37,6 +37,6 @@
     @include gt-mobile{
         box-sizing: border-box;
         width: $section-width-min;
-        position: absolute;right:0px;top:calc(#{$header-height} + #{$header-height});
+        position: absolute;right:0px;top:calc(#{$section-monoline-height} + #{$section-monoline-height});
     }
 }

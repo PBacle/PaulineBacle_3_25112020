@@ -27,14 +27,14 @@ ul{
 }
 
 h1{
-    font-size: $fontsize-h1;
-    margin:$margin-std $margin-huge ;
+   font-size: $fontsize-h1;
+   padding: $line-height $padding-huge ;
 }
 
 h2{
     font-size: $fontsize-h2;
-    padding-top: $padding-large;
-    margin-bottom: $margin-large;
+    padding-top: $section-monoline-height ;
+    padding-bottom: $line-height;
 }
 
 h3{
@@ -44,7 +44,7 @@ h3{
 img{
     object-fit: cover;
     width:100%;
-    max-height: $img-height;
+    max-height: $img-height-min;
 }
 
 section:nth-of-type(even){
@@ -54,5 +54,5 @@ section:nth-of-type(even){
 section{
     text-align: left;
     padding:0 $padding-std 0 $padding-std ;
-    min-height: $section-height;
+    min-height: $section-height-min;
 }

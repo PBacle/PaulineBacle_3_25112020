@@ -39,13 +39,13 @@ ul {
 
 h1 {
   font-size: 1.4em;
-  margin: 20px 75px;
+  padding: 25px 75px;
 }
 
 h2 {
   font-size: 1.3em;
-  padding-top: 50px;
-  margin-bottom: 30px;
+  padding-top: 60px;
+  padding-bottom: 25px;
 }
 
 h3 {
@@ -68,12 +68,14 @@ section {
   min-height: 440px;
 }
 
+/*VARIABLES*/
+/***********/
 div#loader {
   position: absolute;
   background: #f6f6f6;
   width: 100%;
   height: 100%;
-  animation: removeLoader 0.5s ease-in-out 3s both;
+  animation: removeLoader 500ms ease-in-out 3000ms both;
 }
 
 .container {
@@ -195,8 +197,8 @@ div#loader {
   box-shadow: calc(5px - 2px) 5px 5px #d0d0d0;
   font-size: 1em;
   position: relative;
-  margin-top: 50px;
-  margin-bottom: 70px;
+  margin-top: 60px;
+  margin-bottom: calc(60px + 25px);
 }
 .button__bg {
   background: white;
@@ -246,8 +248,7 @@ div#loader {
   opacity: 1;
 }
 
-/* LIST ITEMS
-*/
+/* LIST ITEMS*/
 #content ol, #content ul {
   list-style: none;
 }
@@ -259,7 +260,7 @@ div#loader {
   background-color: white;
 }
 #content ol li + li, #content ul li + li {
-  margin-top: 20px;
+  margin-top: 25px;
 }
 
 ol {
@@ -331,26 +332,27 @@ ol .item:hover .fas--hover {
 /*LIST OF RESTAURANTS*/
 #restaurants ul {
   position: relative;
-  margin-bottom: 65px;
+  padding-bottom: 60px;
 }
 #restaurants ul li {
   height: 250px;
   position: relative;
 }
 #restaurants ul li a > p {
+  /*Style of 'Nouveau' panel*/
   position: absolute;
-  top: 15px;
-  right: 15px;
+  top: 20px;
+  right: 20px;
   z-index: 1;
-  line-height: 30px;
-  width: 80px;
+  padding: 5px;
+  width: max-content;
   color: green;
   font-weight: bold;
   font-size: 0.8em;
   text-align: center;
   background: #99E2D0;
   box-shadow: 3px 3px 3px #e6e6e6;
-  border-radius: 4px;
+  border-radius: 5px;
 }
 @media screen and (min-width: 650px) {
   #restaurants ul li + li {
@@ -362,11 +364,10 @@ ol .item:hover .fas--hover {
     display: grid;
     grid-gap: 20px;
     grid-template-columns: 1fr 1fr;
-    margin-bottom: calc(60px - 5px);
   }
 }
 #restaurants ul figure {
-  height: 250px;
+  height: 60px;
   position: absolute;
   top: 0;
   left: 0;
@@ -389,13 +390,12 @@ ol .item:hover .fas--hover {
   position: relative;
 }
 #restaurants ul figure figcaption .fa-heart {
-  line-height: 60px;
-  margin: 20px 20px 20px 0px;
+  line-height: 90px;
+  margin: 0 20px 0 0;
 }
 @media screen and (min-width: 650px) {
   #restaurants {
     background: #eaeaea;
-    padding-bottom: 10px;
   }
 }
 
@@ -421,7 +421,7 @@ section.menu h2 span {
   position: absolute;
   left: 0;
   right: calc(100% - 2em);
-  bottom: -5px;
+  bottom: calc(25px - 5px);
   border-bottom: 4px solid #99E2D0;
 }
 section.menu .menu-item {
@@ -460,7 +460,7 @@ section.menu .menu-item__description {
   transition: all 300ms ease-in-out;
 }
 section.menu .menu-item__description--long {
-  height: calc(100px + 25px);
+  height: calc(100px + 1.2em);
 }
 section.menu .menu-item__description .long {
   white-space: normal;
@@ -615,7 +615,7 @@ header img {
 header a {
   position: absolute;
   left: 0;
-  margin-left: 20px;
+  padding-left: 20px;
   font-size: 1.3em;
   line-height: 60px;
 }
@@ -642,7 +642,7 @@ footer p {
   font-family: Shrikhand, cursive;
   padding: 0 5px 0 5px;
   line-height: 60px;
-  font-size: 20px;
+  font-size: 1em;
 }
 
 footer ul {
@@ -666,16 +666,16 @@ footer li {
 footer span.fas {
   display: inline-block;
   width: 0.8em;
-  margin-right: 10px;
+  margin-right: 0.8em;
   font-size: 0.8em;
 }
 
 footer ul > li + li {
-  margin-top: 10px;
+  padding-top: 0.8em;
 }
 @media screen and (min-width: 650px) {
   footer ul > li + li {
-    margin-top: 0px;
+    padding-top: 0px;
   }
 }
 
@@ -690,7 +690,7 @@ footer ul > li + li {
   font-weight: bold;
   font-size: 1em;
   border: none;
-  margin: 0 20px;
+  margin: 0 1em;
   width: 150px;
   /*To improve: should adjust depending on the entry*/
   background: transparent;

@@ -21,7 +21,7 @@
     & span{
         position: absolute;
         left:0;right:calc(100% - #{$partial-underlining});
-        bottom:-#{$padding-min};
+        bottom:calc(#{$line-height} - #{$padding-min});
         border-bottom: #{$underlining} solid $colour-tertary ; 
     }  
 }

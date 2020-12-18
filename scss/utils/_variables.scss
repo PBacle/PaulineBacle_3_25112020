@@ -18,39 +18,43 @@ $fontsize-std:1.2em;
 $fontsize-h2:1.3em;
 $fontsize-h1:1.4em;
 
-$fontsize-icon:1.3em;
-$fontsize-icon-medium:1em;
 $fontsize-icon-small:0.7em;
+$fontsize-icon-medium:1em;
+$fontsize-icon-large:1.3em;
 
-$fontsize-logo:20px;
+$fontsize-logo:1em;
 
 /*LAYOUT*/
 $title-partial-underlining:2em;
 $underlining:4px;
 
 $section-width-min:360px;
-$section-height:440px;
-$img-height:250px;
+$section-height-min:440px;
+
 $footer-height-small:100px;
 $footer-height:200px;
-$header-height:60px;
 $header-logo-width:165px;
+$section-monoline-height:60px; 
+
+$ol-counter-size:25; /*px*/ 
+
+$fig-height-min:250px;
+$figcaption-height:90px;
+
+$img-height-min:250px;
+
 $menu-item-button-size:100px;
 
-$ol-counter-height:25; /*px*/
-$line-height:25px;
 
 $border-radius-std:20px;
 $border-radius-large:30px;
 
-$margin-std:20px;
-$margin-large:30px;
-$margin-huge:75px;
-
 $padding-min:5px;
-$padding-small:10px;
-$padding-std:20px;
+$padding-std:20px; 
 $padding-large:50px;
+$padding-huge:75px;  
+
+$line-height:25px;
 
 /*ANIMATION*/
 $animation-dur--medium:300ms;

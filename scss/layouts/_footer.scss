@@ -17,7 +17,7 @@ footer *{
 footer p{
     @include fontDef($font-logo);
     padding:0 $padding-min 0 $padding-min;
-    line-height: $header-height;
+    line-height: $section-monoline-height;
     font-size: $fontsize-logo;
 }
 
@@ -41,13 +41,13 @@ footer li{
 footer span.fas{
     display: inline-block;
     width: $fontsize-tiny;
-    margin-right: $padding-small;
+    margin-right: $fontsize-tiny;
     font-size: $fontsize-tiny;
 }
 
 footer ul > li + li{
-    margin-top: $padding-small;
+    padding-top: $fontsize-tiny;
     @include gt-mobile{
-        margin-top: 0px;
+        padding-top: 0px;
     }
 }

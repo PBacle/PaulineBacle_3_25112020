@@ -6,7 +6,7 @@ form{
         justify-content: space-between;
         align-items: flex-start;
         position:relative;
-        height: calc(#{$header-height} - #{$border-radius-large});
+        height: calc(#{$section-monoline-height} - #{$border-radius-large});
         margin-top: -$border-radius-large;
         background: $colour-bkg-primary;
         padding: $border-radius-large $padding-std $padding-min $padding-std ;

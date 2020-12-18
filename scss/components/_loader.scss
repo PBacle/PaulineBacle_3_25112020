@@ -1,9 +1,13 @@
+/*VARIABLES*/
+$loading-time:3000ms;
+$delay-animation-loader:500ms;
+/***********/
+ 
 div#loader{
     position: absolute;
     background:$colour-bkg-primary;
     width: 100%;height: 100%;
-    animation: removeLoader 0.5s ease-in-out 3s both;
-
+    animation: removeLoader $delay-animation-loader ease-in-out $loading-time both;
 }
 
 .container {

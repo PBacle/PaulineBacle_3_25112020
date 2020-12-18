@@ -2,7 +2,7 @@ header{
     display: flex;
     justify-content: center;
     position: relative;
-    height:$header-height;
+    height:$section-monoline-height;
     max-width: 100%;
     box-shadow: 0 #{$padding-min} #{$padding-min} rgba($colour-bkg-secondary, 0.3);
     background-color: white;
@@ -15,8 +15,8 @@ header{
     & a{
         position:absolute;
         left:0;
-        margin-left: $margin-std;
-        font-size: $fontsize-icon;
-        line-height: $header-height;
+        padding-left: $padding-std;
+        font-size: $fontsize-icon-large;
+        line-height: $section-monoline-height;
     }
 }
