@@ -219,6 +219,27 @@ div#loader {
   opacity: 0.25;
 }
 
+input.button {
+  border: none;
+}
+input.button::before {
+  content: "blabla";
+  background: red;
+  border-radius: 30px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  opacity: 1;
+  transition: opacity 300ms;
+}
+input.button::before:hover {
+  box-shadow: calc(5px + 1px) calc(5px + 2px) calc(5px + 2px) #d0d0d0;
+  opacity: 0.25;
+}
+
 .fa-heart {
   cursor: pointer;
   display: inline-block;

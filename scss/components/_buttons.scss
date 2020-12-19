@@ -28,13 +28,32 @@
     }
 }
 
+input.button{
+    border:none;
+    &::before{
+        content:"blabla";
+        background: red;
+        border-radius: $border-radius-large;
+        position: absolute;
+        top: 0;right: 0; bottom: 0;left: 0;
+        z-index: 1;
+        opacity: 1;
+        transition: opacity $animation-dur--medium ;
+        &:hover{
+            box-shadow: calc(#{$padding-min} + 1px) calc(#{$padding-min} + 2px) calc(#{$padding-min} + 2px) darken($colour-bkg-primary, 15);        
+            opacity: 0.25;
+        }
+    }
+}
+
+
 .fa-heart{
     cursor:pointer;
     display: inline-block;
     font-size: $fontsize-icon-large;
     position:absolute;
     bottom:0;right: 0;
-&::before{
+    &::before{
         position: relative;
         z-index: 1;
         transition: opacity $animation-dur--long;
