@@ -9,7 +9,7 @@
         font-size: $fontsize-small;
         border:none;
         margin:0 $fontsize-small ;
-        width: 150px; /*To improve: should adjust depending on the entry*/
+        width: 150px; /*needs to be improved: should adjust depending on the entry*/
         background: transparent;
     }
     & input[type="submit"]{

@@ -1,5 +1,7 @@
 /*COLORS*/
-@mixin gradient_PrimtoSecond($NoReverse: true,$angle: 180deg){
+
+@mixin gradient_PrimtoSecond($NoReverse: true,$angle: 180deg){ 
+/*creates a background with a gradient color from Primary to Secondary (or reverse)*/
     @if $NoReverse{
         background: linear-gradient($angle, $colour-primary, $colour-secondary);
     }@else{
@@ -18,6 +20,7 @@
 
 /*LAYOUT*/
 @mixin partial_underlining($partial-underlining: $title-partial-underlining){
+/*creates an underline that only span a percentage of the parent element width (default is set in _variables) */
     & span{
         position: absolute;
         left:0;right:calc(100% - #{$partial-underlining});

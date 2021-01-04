@@ -59,6 +59,7 @@ img {
 }
 
 section:nth-of-type(even) {
+  /*if not specified otherwise, sections that follow one another will altern colors*/
   background: white;
 }
 
@@ -193,6 +194,7 @@ div#loader {
   border-radius: 30px;
   padding: 20px;
   width: 220px;
+  /*creates a background with a gradient color from Primary to Secondary (or reverse)*/
   background: linear-gradient(180deg, #FF79DA, #9356DC);
   box-shadow: calc(5px - 2px) 5px 5px #d0d0d0;
   font-size: 1em;
@@ -201,6 +203,7 @@ div#loader {
   margin-bottom: calc(60px + 25px);
 }
 .button__bg {
+  /*on hover this div on top of .button will appear (changin opacity) and make it lighter in color*/
   background: white;
   border-radius: 30px;
   position: absolute;
@@ -215,29 +218,12 @@ div#loader {
 .button:hover {
   box-shadow: calc(5px + 1px) calc(5px + 2px) calc(5px + 2px) #d0d0d0;
 }
-.button:hover .button__bg, .button:hover .fas {
+.button:hover .button__bg {
   opacity: 0.25;
 }
 
 input.button {
   border: none;
-}
-input.button::before {
-  content: "blabla";
-  background: red;
-  border-radius: 30px;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 1;
-  opacity: 1;
-  transition: opacity 300ms;
-}
-input.button::before:hover {
-  box-shadow: calc(5px + 1px) calc(5px + 2px) calc(5px + 2px) #d0d0d0;
-  opacity: 0.25;
 }
 
 .fa-heart {
@@ -254,9 +240,13 @@ input.button::before:hover {
   transition: opacity 600ms;
 }
 .fa-heart__bg::before {
+  /*this icon on top of the other will appear on hover and creates the changing colored background effect*/
+  /*creates a background with a gradient color from Primary to Secondary (or reverse)*/
   background: linear-gradient(180deg, #9356DC, #FF79DA);
   -webkit-background-clip: text;
+  /*the background is "cut" in the shape of the text*/
   -webkit-text-fill-color: transparent;
+  /*the text itself is invisible to allow for the background gradient to be seen*/
   opacity: 0;
   position: relative;
   transition: opacity 600ms;
@@ -272,6 +262,7 @@ input.button::before:hover {
 /* LIST ITEMS*/
 #content ol, #content ul {
   list-style: none;
+  /*remove all markers, even for ol. See below where they are added for ol with :before*/
 }
 #content ol li, #content ul li {
   box-shadow: calc(5px - 2px) 5px 5px #e6e6e6;
@@ -296,6 +287,7 @@ ol .item {
   z-index: 1;
 }
 ol .item:before {
+  /*CREATING THE ROUND COUNTER FOR OL*/
   content: counter(item);
   border-radius: 100%;
   background-color: #9356DC;
@@ -303,11 +295,13 @@ ol .item:before {
   line-height: 25px;
   text-align: center;
   margin-left: -12.5px;
+  /*puts the counter on the edge of the li*/
   color: white;
   font-weight: bold;
   display: inline-block;
 }
 ol .item .fas {
+  /*will change color on hover via another icon on top of it (see .fas--hover below) */
   color: gray;
   line-height: 75px;
   padding: 0 20px 0 20px;
@@ -315,13 +309,17 @@ ol .item .fas {
   z-index: 0;
 }
 ol .item .fas--hover {
+  /*the icon will change coler on hover*/
   position: absolute;
   left: 12.5px;
+  /*to account for the ol marker*/
   z-index: 10;
   color: #9356DC;
-  opacity: 0.3;
+  opacity: 0;
+  /*not visible when no hover */
 }
 ol .item__bg {
+  /*the background color will change on hover, using a div on top of this selector*/
   background: #f6f6f6;
   border-radius: 30px;
   position: absolute;
@@ -333,18 +331,25 @@ ol .item__bg {
   transition: opacity 300ms;
 }
 ol .item__bg--hover {
+  /*this will appear on hover*/
   opacity: 0;
   background: #9356DC;
   transition: opacity 300ms;
 }
-ol .item:hover .fas {
-  opacity: 0;
+ol .item:hover {
+  /*makes the usual background color disappear*/
+  /*makes the new background color appear on hover*/
+  /*makes the usual icon disappear */
+  /*makes the icon with new color appear on hover*/
 }
 ol .item:hover .item__bg {
   opacity: 0;
 }
 ol .item:hover .item__bg--hover {
   opacity: 0.1;
+}
+ol .item:hover .fas {
+  opacity: 0;
 }
 ol .item:hover .fas--hover {
   opacity: 1;
@@ -385,6 +390,7 @@ ol .item:hover .fas--hover {
     display: grid;
     grid-gap: 20px;
     grid-template-columns: 1fr 1fr;
+    /*on large screen, list will not appear on one column but two*/
   }
 }
 #restaurants ul figure {
@@ -421,6 +427,7 @@ ol .item:hover .fas--hover {
 }
 
 /*VARIABLES*/
+/*number max of items in a section of menu*/
 /***********/
 section.menu {
   text-align: left;
@@ -429,14 +436,15 @@ section.menu {
 }
 @media screen and (min-width: 650px) {
   section.menu {
-    width: calc(40%);
-    min-width: calc(450px - 10px);
+    min-width: calc(450px);
+    /*to make all sections of menu the same width*/
   }
 }
 section.menu h2 {
   text-transform: uppercase;
   font-weight: normal;
   position: relative;
+  /*creates an underline that only span a percentage of the parent element width (default is set in _variables) */
 }
 section.menu h2 span {
   position: absolute;
@@ -459,7 +467,7 @@ section.menu .menu-item:after {
   left: 0px;
 }
 section.menu .menu-item label {
-  /*To make the whole item clickable*/
+  /*To make the whole item clickable (with input for future functionnality)*/
   position: absolute;
   border-radius: 20px;
   top: 0;
@@ -473,11 +481,14 @@ section.menu .menu-item__description {
   padding: 20px;
   box-sizing: border-box;
   height: 100px;
+  /*add a line worth of height when the name  OR the info of the item takes TWO lines instead of one (case not considered : if both take two lines...)*/
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  /*Especially important for .menu-item__description--long*/
+  /*especially important for .menu-item__description--long*/
   white-space: nowrap;
+  /*allows for the property text-overflow:ellipsis (see below) to work when the user stops hovering */
+  /*allows the long name/info of item to take the two lines they need (long */
   transition: all 300ms ease-in-out;
 }
 section.menu .menu-item__description--long {
@@ -490,6 +501,7 @@ section.menu .menu-item__description > * {
   width: calc(100% - 40px - 5px);
   overflow: hidden;
   text-overflow: ellipsis;
+  /*puts the suspension points needed for all phases of animation on animation*/
 }
 section.menu .menu-item__description p:last-child {
   position: absolute;
@@ -501,6 +513,7 @@ section.menu .menu-item__description p:last-child {
   font-weight: bold;
 }
 section.menu .menu-item__button {
+  /*animated to appear on hover*/
   position: absolute;
   top: 0;
   bottom: 0;
@@ -515,6 +528,7 @@ section.menu .menu-item__button {
   transition: all 300ms ease-in-out;
 }
 section.menu .menu-item__button span.fas {
+  /*checked icon animated on hover*/
   margin: auto;
   background: white;
   border-radius: 50%;
@@ -534,11 +548,12 @@ section.menu .menu-item:hover .menu-item__description {
   width: calc(100% - 100px);
 }
 section.menu .menu-item:hover .menu-item__description > * {
-  /*HIDE THE TOO LONG NAME WITH SUSPENSION POINTS*/
+  /*hides the too long names/infos with suspension points*/
   white-space: nowrap;
+  /*this actually change only for --long title or info*/
 }
 section.menu .menu-item:hover .menu-item__button {
-  /*CHECKBOX APPEAR*/
+  /*checked icon appears*/
   opacity: 1;
   width: 100px;
 }
@@ -558,55 +573,148 @@ section.menu .menu-item:hover .menu-item__button .fas {
   }
 }
 /*ANIMATION: MENU ITEMS APPEARING PROGRESSIVELY ON LOAD*/
+/*section will appear one at a time : see animation-delay*/
+.menu:nth-child(1) {
+  /*items of the section will appear one at a time : see animation-delay*/
+  /*items of the section will appear one at a time : see animation-delay*/
+  /*items of the section will appear one at a time : see animation-delay*/
+  /*items of the section will appear one at a time : see animation-delay*/
+}
 .menu:nth-child(1) .menu-item:nth-child(1) {
   animation: itemAppearing 300ms ease-in-out backwards;
   animation-delay: 300ms;
+  /*small inconvenience : because of $nummax-items being always the same in 
+  ($animation-dur--short * $nummax-items) * ($i - 1) that
+  allow for the sections to appear one at a time  
+  the  delay will not be completely even and there will be
+  a "gap" after a section with less than $nummax-items items
+  */
 }
 .menu:nth-child(1) .menu-item:nth-child(2) {
   animation: itemAppearing 300ms ease-in-out backwards;
   animation-delay: 450ms;
+  /*small inconvenience : because of $nummax-items being always the same in 
+  ($animation-dur--short * $nummax-items) * ($i - 1) that
+  allow for the sections to appear one at a time  
+  the  delay will not be completely even and there will be
+  a "gap" after a section with less than $nummax-items items
+  */
 }
 .menu:nth-child(1) .menu-item:nth-child(3) {
   animation: itemAppearing 300ms ease-in-out backwards;
   animation-delay: 600ms;
+  /*small inconvenience : because of $nummax-items being always the same in 
+  ($animation-dur--short * $nummax-items) * ($i - 1) that
+  allow for the sections to appear one at a time  
+  the  delay will not be completely even and there will be
+  a "gap" after a section with less than $nummax-items items
+  */
 }
 .menu:nth-child(1) .menu-item:nth-child(4) {
   animation: itemAppearing 300ms ease-in-out backwards;
   animation-delay: 750ms;
+  /*small inconvenience : because of $nummax-items being always the same in 
+  ($animation-dur--short * $nummax-items) * ($i - 1) that
+  allow for the sections to appear one at a time  
+  the  delay will not be completely even and there will be
+  a "gap" after a section with less than $nummax-items items
+  */
 }
 
+/*section will appear one at a time : see animation-delay*/
+.menu:nth-child(2) {
+  /*items of the section will appear one at a time : see animation-delay*/
+  /*items of the section will appear one at a time : see animation-delay*/
+  /*items of the section will appear one at a time : see animation-delay*/
+  /*items of the section will appear one at a time : see animation-delay*/
+}
 .menu:nth-child(2) .menu-item:nth-child(1) {
   animation: itemAppearing 300ms ease-in-out backwards;
   animation-delay: 900ms;
+  /*small inconvenience : because of $nummax-items being always the same in 
+  ($animation-dur--short * $nummax-items) * ($i - 1) that
+  allow for the sections to appear one at a time  
+  the  delay will not be completely even and there will be
+  a "gap" after a section with less than $nummax-items items
+  */
 }
 .menu:nth-child(2) .menu-item:nth-child(2) {
   animation: itemAppearing 300ms ease-in-out backwards;
   animation-delay: 1050ms;
+  /*small inconvenience : because of $nummax-items being always the same in 
+  ($animation-dur--short * $nummax-items) * ($i - 1) that
+  allow for the sections to appear one at a time  
+  the  delay will not be completely even and there will be
+  a "gap" after a section with less than $nummax-items items
+  */
 }
 .menu:nth-child(2) .menu-item:nth-child(3) {
   animation: itemAppearing 300ms ease-in-out backwards;
   animation-delay: 1200ms;
+  /*small inconvenience : because of $nummax-items being always the same in 
+  ($animation-dur--short * $nummax-items) * ($i - 1) that
+  allow for the sections to appear one at a time  
+  the  delay will not be completely even and there will be
+  a "gap" after a section with less than $nummax-items items
+  */
 }
 .menu:nth-child(2) .menu-item:nth-child(4) {
   animation: itemAppearing 300ms ease-in-out backwards;
   animation-delay: 1350ms;
+  /*small inconvenience : because of $nummax-items being always the same in 
+  ($animation-dur--short * $nummax-items) * ($i - 1) that
+  allow for the sections to appear one at a time  
+  the  delay will not be completely even and there will be
+  a "gap" after a section with less than $nummax-items items
+  */
 }
 
+/*section will appear one at a time : see animation-delay*/
+.menu:nth-child(3) {
+  /*items of the section will appear one at a time : see animation-delay*/
+  /*items of the section will appear one at a time : see animation-delay*/
+  /*items of the section will appear one at a time : see animation-delay*/
+  /*items of the section will appear one at a time : see animation-delay*/
+}
 .menu:nth-child(3) .menu-item:nth-child(1) {
   animation: itemAppearing 300ms ease-in-out backwards;
   animation-delay: 1500ms;
+  /*small inconvenience : because of $nummax-items being always the same in 
+  ($animation-dur--short * $nummax-items) * ($i - 1) that
+  allow for the sections to appear one at a time  
+  the  delay will not be completely even and there will be
+  a "gap" after a section with less than $nummax-items items
+  */
 }
 .menu:nth-child(3) .menu-item:nth-child(2) {
   animation: itemAppearing 300ms ease-in-out backwards;
   animation-delay: 1650ms;
+  /*small inconvenience : because of $nummax-items being always the same in 
+  ($animation-dur--short * $nummax-items) * ($i - 1) that
+  allow for the sections to appear one at a time  
+  the  delay will not be completely even and there will be
+  a "gap" after a section with less than $nummax-items items
+  */
 }
 .menu:nth-child(3) .menu-item:nth-child(3) {
   animation: itemAppearing 300ms ease-in-out backwards;
   animation-delay: 1800ms;
+  /*small inconvenience : because of $nummax-items being always the same in 
+  ($animation-dur--short * $nummax-items) * ($i - 1) that
+  allow for the sections to appear one at a time  
+  the  delay will not be completely even and there will be
+  a "gap" after a section with less than $nummax-items items
+  */
 }
 .menu:nth-child(3) .menu-item:nth-child(4) {
   animation: itemAppearing 300ms ease-in-out backwards;
   animation-delay: 1950ms;
+  /*small inconvenience : because of $nummax-items being always the same in 
+  ($animation-dur--short * $nummax-items) * ($i - 1) that
+  allow for the sections to appear one at a time  
+  the  delay will not be completely even and there will be
+  a "gap" after a section with less than $nummax-items items
+  */
 }
 
 @keyframes itemAppearing {
@@ -713,7 +821,7 @@ footer ul > li + li {
   border: none;
   margin: 0 1em;
   width: 150px;
-  /*To improve: should adjust depending on the entry*/
+  /*needs to be improved: should adjust depending on the entry*/
   background: transparent;
 }
 #localisation input[type=submit] {
@@ -750,6 +858,7 @@ footer ul > li + li {
   }
 }
 
+/*RESTAURANT PAGES*/
 form h1 {
   font-family: Shrikhand, cursive;
   margin: 0;
@@ -768,6 +877,7 @@ form h1 span.fa-heart {
   margin-right: 20px;
   margin-bottom: 5px;
   font-size: inherit;
+  /*otherwise std size, too large*/
 }
 @media screen and (min-width: 650px) {
   form div {

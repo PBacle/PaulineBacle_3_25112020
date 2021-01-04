@@ -1,3 +1,5 @@
+/*RESTAURANT PAGES*/
+
 form{
     & h1{
         @include fontDef($font-logo);
@@ -15,7 +17,7 @@ form{
             font-size:$fontsize-icon-medium;
             margin-right: $padding-std;
             margin-bottom: $padding-min;
-            font-size: inherit;
+            font-size: inherit; /*otherwise std size, too large*/
         }
     }
     & div{

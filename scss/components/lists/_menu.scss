@@ -1,6 +1,6 @@
 /*VARIABLES*/
-$nummax-items:4;
-$price-width:40px;
+$nummax-items:4; /*number max of items in a section of menu*/
+$price-width:40px; 
 /***********/
 
 section.menu{
@@ -8,15 +8,14 @@ section.menu{
     background: $colour-bkg-primary;
     padding: 0 $padding-std 0 $padding-std ;
     @include gt-mobile{
-        width: calc(40%);
-        min-width: calc(#{map-get($breakpoints, smallest)} - 10px);
-    }        
+        min-width: calc(#{map-get($breakpoints, smallest)}); /*to make all sections of menu the same width*/
+    }
 
     & h2{
         text-transform: uppercase;
         font-weight: normal;
         position: relative;
-        @include partial_underlining;
+        @include partial_underlining; 
     }
 
     .menu-item{
@@ -27,7 +26,7 @@ section.menu{
             height:100%;width:100%;
             position:absolute;top:0;left:0px;
         }
-        & label{/*To make the whole item clickable*/
+        & label{/*To make the whole item clickable (with input for future functionnality)*/
             position: absolute;
             border-radius: $border-radius-std;
             top:0;bottom:0;left:0;right: 0;
@@ -38,15 +37,15 @@ section.menu{
             padding:$padding-std;
             box-sizing: border-box;
             height: $menu-item-button-size;
-            &--long{height: calc(#{$menu-item-button-size} + #{$fontsize-std});} 
+            &--long{height: calc(#{$menu-item-button-size} + #{$fontsize-std});} /*add a line worth of height when the name  OR the info of the item takes TWO lines instead of one (case not considered : if both take two lines...)*/
             display: flex;flex-direction: column;
-            justify-content: space-between; /*Especially important for .menu-item__description--long*/
-            white-space: nowrap;
-            .long{white-space: normal;}
+            justify-content: space-between; /*especially important for .menu-item__description--long*/
+            white-space: nowrap; /*allows for the property text-overflow:ellipsis (see below) to work when the user stops hovering */
+            .long{white-space: normal;} /*allows the long name/info of item to take the two lines they need (long */
             transition: all $animation-dur--medium ease-in-out;
             & > * {
-                width: calc(100% - #{$price-width} - #{$padding-min});
-                overflow: hidden;text-overflow: ellipsis;    
+                width: calc(100% - #{$price-width} - #{$padding-min}); 
+                overflow: hidden;text-overflow: ellipsis; /*puts the suspension points needed for all phases of animation on animation*/
             }
             & p:last-child{ 
                 position: absolute;
@@ -57,7 +56,7 @@ section.menu{
             }
         }
 
-        &__button{
+        &__button{ /*animated to appear on hover*/
             position: absolute;
             top:0;bottom:0;right:0;
             background: $colour-tertary;
@@ -66,7 +65,7 @@ section.menu{
             width:0; /*will change with transition*/
             opacity: 0; /*will change with transition*/
             transition: all $animation-dur--medium ease-in-out;
-            & span.fas{
+            & span.fas{ /*checked icon animated on hover*/
                 margin:auto;
                 background: $colour-bkg-item;
                 border-radius: 50%;
@@ -82,13 +81,12 @@ section.menu{
 
         &:hover{ /*ANIMATION: CHOOSING A MENU ITEM*/
             & .menu-item__description{
-                
                 width: calc(100% - #{$menu-item-button-size});
-                & > * {     /*HIDE THE TOO LONG NAME WITH SUSPENSION POINTS*/ 
-                    white-space: nowrap;
+                & > * {     /*hides the too long names/infos with suspension points*/ 
+                    white-space: nowrap; /*this actually change only for --long title or info*/
                 }
             }
-            & .menu-item__button{  /*CHECKBOX APPEAR*/ 
+            & .menu-item__button{  /*checked icon appears*/ 
                 opacity: 1;
                 width: $menu-item-button-size;
                 & .fas{
@@ -112,12 +110,18 @@ section.menu{
   }
 
 /*ANIMATION: MENU ITEMS APPEARING PROGRESSIVELY ON LOAD*/
-@for $i from 1 through 3 {
-    .menu:nth-child(#{$i}) {
-        @for $ii from 1 through $nummax-items {
+@for $i from 1 through 3 { /*section will appear one at a time : see animation-delay*/
+    .menu:nth-child(#{$i}) { 
+        @for $ii from 1 through $nummax-items { /*items of the section will appear one at a time : see animation-delay*/
             & .menu-item:nth-child(#{$ii}){
                 animation: itemAppearing $animation-dur--medium ease-in-out backwards ;
                 animation-delay: $animation-dur--short + ($animation-dur--short * $nummax-items) * ($i - 1) + $animation-dur--short * $ii;
+/*small inconvenience : because of $nummax-items being always the same in 
+($animation-dur--short * $nummax-items) * ($i - 1) that
+allow for the sections to appear one at a time  
+the  delay will not be completely even and there will be
+a "gap" after a section with less than $nummax-items items
+*/
             }
         }
     }

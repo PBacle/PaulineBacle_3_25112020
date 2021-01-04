@@ -28,9 +28,9 @@
             }        
         }
         @include gt-mobile{
-            display: grid;
+            display: grid; 
             grid-gap : $padding-std;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr 1fr; /*on large screen, list will not appear on one column but two*/
         }    
         & figure{
             height:$section-monoline-height;
@@ -60,6 +60,6 @@
         }
     }
     @include gt-mobile{
-        background: $colour-bkg-primary--darker;
+        background: $colour-bkg-primary--darker; 
     }
 }

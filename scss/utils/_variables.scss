@@ -1,7 +1,6 @@
 /*COLORS*/
 $colour-primary:#9356DC;
 $colour-secondary:#FF79DA;
-$colour-secondary--lighter:#f5edff;
 $colour-tertary:#99E2D0;
 $colour-bkg-primary:#f6f6f6;
 $colour-bkg-primary--darker:#eaeaea;
@@ -41,10 +40,9 @@ $ol-counter-size:25; /*px*/
 $fig-height-min:250px;
 $figcaption-height:90px;
 
-$img-height-min:250px;
+$img-height-max:250px;
 
 $menu-item-button-size:100px;
-
 
 $border-radius-std:20px;
 $border-radius-large:30px;

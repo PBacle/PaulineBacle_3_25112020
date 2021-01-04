@@ -44,10 +44,10 @@ h3{
 img{
     object-fit: cover;
     width:100%;
-    max-height: $img-height-min;
+    max-height: $img-height-max;
 }
 
-section:nth-of-type(even){
+section:nth-of-type(even){ /*if not specified otherwise, sections that follow one another will altern colors*/
     background: white;
 }
 
@@ -56,3 +56,4 @@ section{
     padding:0 $padding-std 0 $padding-std ;
     min-height: $section-height-min;
 }
+
