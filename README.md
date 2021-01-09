@@ -17,14 +17,12 @@ Contents:
   scss/base/
    _base.scss    
   scss/components/
-   _buttons.scss _loader.scss lists/_general.scss lists/_restaurants.scss
+   _buttons.scss _loader.scss lists/_general.scss lists/_restaurants.scss lists/_menu.scss
   scss/layouts/
    _footer.scss _header.scss
   scss/pages/
    _index.scss _restaurants.scss
-  scss/themes/
   scss/utils/
    _mixins.scss _variables.scss
-  scss/vendors/
 
 

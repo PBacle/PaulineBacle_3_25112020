@@ -1,7 +1,5 @@
-/*VARIABLES*/
-$nummax-items:4; /*number max of items in a section of menu*/
+$nummax-items:4; 
 $price-width:40px; 
-/***********/
 
 section.menu{
     text-align: left;
@@ -41,7 +39,9 @@ section.menu{
             display: flex;flex-direction: column;
             justify-content: space-between; /*especially important for .menu-item__description--long*/
             white-space: nowrap; /*allows for the property text-overflow:ellipsis (see below) to work when the user stops hovering */
-            .long{white-space: normal;} /*allows the long name/info of item to take the two lines they need (long */
+            .long{
+                white-space: normal; /*allows the long name/info of item to take the two lines they need (long */
+            }
             transition: all $animation-dur--medium ease-in-out;
             & > * {
                 width: calc(100% - #{$price-width} - #{$padding-min}); 
@@ -49,7 +49,7 @@ section.menu{
             }
             & p:last-child{ 
                 position: absolute;
-                bottom:$padding-std;right: $padding-std; /*Put the price on the same baseline as info of menu item*/
+                bottom:$padding-std;right: $padding-std; /*puts the price on the same baseline as info of menu item*/
                 width: $price-width;
                 text-align: right;
                 font-weight: bold;
@@ -110,18 +110,22 @@ section.menu{
   }
 
 /*ANIMATION: MENU ITEMS APPEARING PROGRESSIVELY ON LOAD*/
-@for $i from 1 through 3 { /*section will appear one at a time : see animation-delay*/
-    .menu:nth-child(#{$i}) { 
-        @for $ii from 1 through $nummax-items { /*items of the section will appear one at a time : see animation-delay*/
-            & .menu-item:nth-child(#{$ii}){
-                animation: itemAppearing $animation-dur--medium ease-in-out backwards ;
-                animation-delay: $animation-dur--short + ($animation-dur--short * $nummax-items) * ($i - 1) + $animation-dur--short * $ii;
+/*animation delay of appearance is calculated based on 
+both the number of the section (first is "Entrees", second is "Plats"...) 
+from 1 to 3, and the number of the item in the section
+from 1 to a number max of items (default : 4, defined as a variable in sass file)*/
 /*small inconvenience : because of $nummax-items being always the same in 
 ($animation-dur--short * $nummax-items) * ($i - 1) that
 allow for the sections to appear one at a time  
 the  delay will not be completely even and there will be
 a "gap" after a section with less than $nummax-items items
 */
+@for $i from 1 through 3 { 
+    .menu:nth-child(#{$i}) { 
+        @for $ii from 1 through $nummax-items { 
+            & .menu-item:nth-child(#{$ii}){
+                animation: itemAppearing $animation-dur--medium ease-in-out backwards ;
+                animation-delay: $animation-dur--short + ($animation-dur--short * $nummax-items) * ($i - 1) + $animation-dur--short * $ii;
             }
         }
     }

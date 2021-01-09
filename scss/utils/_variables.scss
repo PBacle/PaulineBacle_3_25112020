@@ -1,4 +1,3 @@
-/*COLORS*/
 $colour-primary:#9356DC;
 $colour-secondary:#FF79DA;
 $colour-tertary:#99E2D0;
@@ -7,41 +6,31 @@ $colour-bkg-primary--darker:#eaeaea;
 $colour-bkg-secondary:#353535;
 $colour-bkg-item:white;
 
-/*FONTS*/
 $font-logo:Shrikhand;
 $font-main:Roboto;
-
 $fontsize-tiny: 0.8em;
 $fontsize-small: 1em;
 $fontsize-std:1.2em;
 $fontsize-h2:1.3em;
 $fontsize-h1:1.4em;
-
 $fontsize-icon-small:0.7em;
 $fontsize-icon-medium:1em;
 $fontsize-icon-large:1.3em;
-
 $fontsize-logo:1em;
 
-/*LAYOUT*/
 $title-partial-underlining:2em;
 $underlining:4px;
 
 $section-width-min:360px;
 $section-height-min:440px;
-
 $footer-height-small:100px;
 $footer-height:200px;
 $header-logo-width:165px;
 $section-monoline-height:60px; 
-
 $ol-counter-size:25; /*px*/ 
-
 $fig-height-min:250px;
 $figcaption-height:90px;
-
 $img-height-max:250px;
-
 $menu-item-button-size:100px;
 
 $border-radius-std:20px;
@@ -54,12 +43,10 @@ $padding-huge:75px;
 
 $line-height:25px;
 
-/*ANIMATION*/
 $animation-dur--medium:300ms;
 $animation-dur--short:$animation-dur--medium / 2;
 $animation-dur--long:2*$animation-dur--medium;
 
-/*SCREEN RESOLUTION*/
 $breakpoints: (
   smallest:450px,
   mobile: 650px

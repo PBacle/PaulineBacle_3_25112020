@@ -1,13 +1,4 @@
-/*COLORS*/
-/*FONTS*/
-/*LAYOUT*/
 /*px*/
-/*ANIMATION*/
-/*SCREEN RESOLUTION*/
-/*COLORS*/
-/*FONTS*/
-/*LAYOUT*/
-/*SCREEN RESOLUTION*/
 html, body {
   max-width: 100%;
   min-height: 100%;
@@ -69,8 +60,6 @@ section {
   min-height: 440px;
 }
 
-/*VARIABLES*/
-/***********/
 div#loader {
   position: absolute;
   background: #f6f6f6;
@@ -194,8 +183,8 @@ div#loader {
   border-radius: 30px;
   padding: 20px;
   width: 220px;
-  /*creates a background with a gradient color from Primary to Secondary (or reverse)*/
   background: linear-gradient(180deg, #FF79DA, #9356DC);
+  /*creates a background with a gradient color from Secondary to Primary*/
   box-shadow: calc(5px - 2px) 5px 5px #d0d0d0;
   font-size: 1em;
   position: relative;
@@ -241,8 +230,8 @@ input.button {
 }
 .fa-heart__bg::before {
   /*this icon on top of the other will appear on hover and creates the changing colored background effect*/
-  /*creates a background with a gradient color from Primary to Secondary (or reverse)*/
   background: linear-gradient(180deg, #9356DC, #FF79DA);
+  /*creates a background with a gradient color from Primary to Secondary*/
   -webkit-background-clip: text;
   /*the background is "cut" in the shape of the text*/
   -webkit-text-fill-color: transparent;
@@ -426,9 +415,6 @@ ol .item:hover .fas--hover {
   }
 }
 
-/*VARIABLES*/
-/*number max of items in a section of menu*/
-/***********/
 section.menu {
   text-align: left;
   background: #f6f6f6;
@@ -444,9 +430,9 @@ section.menu h2 {
   text-transform: uppercase;
   font-weight: normal;
   position: relative;
-  /*creates an underline that only span a percentage of the parent element width (default is set in _variables) */
 }
 section.menu h2 span {
+  /*creates an underline that only span a percentage of the parent element width (default is set in _variables) */
   position: absolute;
   left: 0;
   right: calc(100% - 2em);
@@ -488,7 +474,6 @@ section.menu .menu-item__description {
   /*especially important for .menu-item__description--long*/
   white-space: nowrap;
   /*allows for the property text-overflow:ellipsis (see below) to work when the user stops hovering */
-  /*allows the long name/info of item to take the two lines they need (long */
   transition: all 300ms ease-in-out;
 }
 section.menu .menu-item__description--long {
@@ -496,6 +481,7 @@ section.menu .menu-item__description--long {
 }
 section.menu .menu-item__description .long {
   white-space: normal;
+  /*allows the long name/info of item to take the two lines they need (long */
 }
 section.menu .menu-item__description > * {
   width: calc(100% - 40px - 5px);
@@ -507,7 +493,7 @@ section.menu .menu-item__description p:last-child {
   position: absolute;
   bottom: 20px;
   right: 20px;
-  /*Put the price on the same baseline as info of menu item*/
+  /*puts the price on the same baseline as info of menu item*/
   width: 40px;
   text-align: right;
   font-weight: bold;
@@ -573,148 +559,65 @@ section.menu .menu-item:hover .menu-item__button .fas {
   }
 }
 /*ANIMATION: MENU ITEMS APPEARING PROGRESSIVELY ON LOAD*/
-/*section will appear one at a time : see animation-delay*/
-.menu:nth-child(1) {
-  /*items of the section will appear one at a time : see animation-delay*/
-  /*items of the section will appear one at a time : see animation-delay*/
-  /*items of the section will appear one at a time : see animation-delay*/
-  /*items of the section will appear one at a time : see animation-delay*/
-}
+/*animation delay of appearance is calculated based on 
+both the number of the section (first is "Entrees", second is "Plats"...) 
+from 1 to 3, and the number of the item in the section
+from 1 to a number max of items (default : 4, defined as a variable in sass file)*/
+/*small inconvenience : because of $nummax-items being always the same in 
+($animation-dur--short * $nummax-items) * ($i - 1) that
+allow for the sections to appear one at a time  
+the  delay will not be completely even and there will be
+a "gap" after a section with less than $nummax-items items
+*/
 .menu:nth-child(1) .menu-item:nth-child(1) {
   animation: itemAppearing 300ms ease-in-out backwards;
   animation-delay: 300ms;
-  /*small inconvenience : because of $nummax-items being always the same in 
-  ($animation-dur--short * $nummax-items) * ($i - 1) that
-  allow for the sections to appear one at a time  
-  the  delay will not be completely even and there will be
-  a "gap" after a section with less than $nummax-items items
-  */
 }
 .menu:nth-child(1) .menu-item:nth-child(2) {
   animation: itemAppearing 300ms ease-in-out backwards;
   animation-delay: 450ms;
-  /*small inconvenience : because of $nummax-items being always the same in 
-  ($animation-dur--short * $nummax-items) * ($i - 1) that
-  allow for the sections to appear one at a time  
-  the  delay will not be completely even and there will be
-  a "gap" after a section with less than $nummax-items items
-  */
 }
 .menu:nth-child(1) .menu-item:nth-child(3) {
   animation: itemAppearing 300ms ease-in-out backwards;
   animation-delay: 600ms;
-  /*small inconvenience : because of $nummax-items being always the same in 
-  ($animation-dur--short * $nummax-items) * ($i - 1) that
-  allow for the sections to appear one at a time  
-  the  delay will not be completely even and there will be
-  a "gap" after a section with less than $nummax-items items
-  */
 }
 .menu:nth-child(1) .menu-item:nth-child(4) {
   animation: itemAppearing 300ms ease-in-out backwards;
   animation-delay: 750ms;
-  /*small inconvenience : because of $nummax-items being always the same in 
-  ($animation-dur--short * $nummax-items) * ($i - 1) that
-  allow for the sections to appear one at a time  
-  the  delay will not be completely even and there will be
-  a "gap" after a section with less than $nummax-items items
-  */
 }
 
-/*section will appear one at a time : see animation-delay*/
-.menu:nth-child(2) {
-  /*items of the section will appear one at a time : see animation-delay*/
-  /*items of the section will appear one at a time : see animation-delay*/
-  /*items of the section will appear one at a time : see animation-delay*/
-  /*items of the section will appear one at a time : see animation-delay*/
-}
 .menu:nth-child(2) .menu-item:nth-child(1) {
   animation: itemAppearing 300ms ease-in-out backwards;
   animation-delay: 900ms;
-  /*small inconvenience : because of $nummax-items being always the same in 
-  ($animation-dur--short * $nummax-items) * ($i - 1) that
-  allow for the sections to appear one at a time  
-  the  delay will not be completely even and there will be
-  a "gap" after a section with less than $nummax-items items
-  */
 }
 .menu:nth-child(2) .menu-item:nth-child(2) {
   animation: itemAppearing 300ms ease-in-out backwards;
   animation-delay: 1050ms;
-  /*small inconvenience : because of $nummax-items being always the same in 
-  ($animation-dur--short * $nummax-items) * ($i - 1) that
-  allow for the sections to appear one at a time  
-  the  delay will not be completely even and there will be
-  a "gap" after a section with less than $nummax-items items
-  */
 }
 .menu:nth-child(2) .menu-item:nth-child(3) {
   animation: itemAppearing 300ms ease-in-out backwards;
   animation-delay: 1200ms;
-  /*small inconvenience : because of $nummax-items being always the same in 
-  ($animation-dur--short * $nummax-items) * ($i - 1) that
-  allow for the sections to appear one at a time  
-  the  delay will not be completely even and there will be
-  a "gap" after a section with less than $nummax-items items
-  */
 }
 .menu:nth-child(2) .menu-item:nth-child(4) {
   animation: itemAppearing 300ms ease-in-out backwards;
   animation-delay: 1350ms;
-  /*small inconvenience : because of $nummax-items being always the same in 
-  ($animation-dur--short * $nummax-items) * ($i - 1) that
-  allow for the sections to appear one at a time  
-  the  delay will not be completely even and there will be
-  a "gap" after a section with less than $nummax-items items
-  */
 }
 
-/*section will appear one at a time : see animation-delay*/
-.menu:nth-child(3) {
-  /*items of the section will appear one at a time : see animation-delay*/
-  /*items of the section will appear one at a time : see animation-delay*/
-  /*items of the section will appear one at a time : see animation-delay*/
-  /*items of the section will appear one at a time : see animation-delay*/
-}
 .menu:nth-child(3) .menu-item:nth-child(1) {
   animation: itemAppearing 300ms ease-in-out backwards;
   animation-delay: 1500ms;
-  /*small inconvenience : because of $nummax-items being always the same in 
-  ($animation-dur--short * $nummax-items) * ($i - 1) that
-  allow for the sections to appear one at a time  
-  the  delay will not be completely even and there will be
-  a "gap" after a section with less than $nummax-items items
-  */
 }
 .menu:nth-child(3) .menu-item:nth-child(2) {
   animation: itemAppearing 300ms ease-in-out backwards;
   animation-delay: 1650ms;
-  /*small inconvenience : because of $nummax-items being always the same in 
-  ($animation-dur--short * $nummax-items) * ($i - 1) that
-  allow for the sections to appear one at a time  
-  the  delay will not be completely even and there will be
-  a "gap" after a section with less than $nummax-items items
-  */
 }
 .menu:nth-child(3) .menu-item:nth-child(3) {
   animation: itemAppearing 300ms ease-in-out backwards;
   animation-delay: 1800ms;
-  /*small inconvenience : because of $nummax-items being always the same in 
-  ($animation-dur--short * $nummax-items) * ($i - 1) that
-  allow for the sections to appear one at a time  
-  the  delay will not be completely even and there will be
-  a "gap" after a section with less than $nummax-items items
-  */
 }
 .menu:nth-child(3) .menu-item:nth-child(4) {
   animation: itemAppearing 300ms ease-in-out backwards;
   animation-delay: 1950ms;
-  /*small inconvenience : because of $nummax-items being always the same in 
-  ($animation-dur--short * $nummax-items) * ($i - 1) that
-  allow for the sections to appear one at a time  
-  the  delay will not be completely even and there will be
-  a "gap" after a section with less than $nummax-items items
-  */
 }
 
 @keyframes itemAppearing {
