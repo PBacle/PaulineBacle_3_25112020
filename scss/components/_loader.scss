@@ -16,7 +16,7 @@ div#loader{
   
 .book {
     transform-style: preserve-3d;
-    position: relative;
+    position: fixed;
     height: 150px;
     backface-visibility: visible;
     perspective: 600px;

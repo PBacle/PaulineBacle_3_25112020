@@ -10,7 +10,7 @@ html, body {
 body {
   background: #f6f6f6;
   text-align: center;
-  font-size: 1.2em;
+  font-size: 1.1em;
   position: relative;
 }
 
@@ -40,7 +40,7 @@ h2 {
 }
 
 h3 {
-  font-size: 1.2em;
+  font-size: 1.1em;
 }
 
 img {
@@ -78,7 +78,7 @@ div#loader {
 
 .book {
   transform-style: preserve-3d;
-  position: relative;
+  position: fixed;
   height: 150px;
   backface-visibility: visible;
   perspective: 600px;
@@ -477,7 +477,7 @@ section.menu .menu-item__description {
   transition: all 300ms ease-in-out;
 }
 section.menu .menu-item__description--long {
-  height: calc(100px + 1.2em);
+  height: calc(100px + 1.1em);
 }
 section.menu .menu-item__description .long {
   white-space: normal;
