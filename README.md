@@ -1,8 +1,9 @@
-# PaulineBacle_3_25112020
-Projet 3 de la formation "Développement Web" d'OpenClassRooms : Dynamisez une page web avec des animations CSS 
+#  OpenClassrooms-Développeur Web 📎 Projet 3 - Dynamisez une page web avec des animations CSS
 
+👤 &nbsp; **Pauline BACLE** [🇫🇷 Contactez moi ](<bacle-pauline@orage.fr>)
+_`Début du projet le 25/11/2020`_
 
-Contents:
+## Contenu de ce repository
 - index.html
 - package.json
 - RESTAURANTS/
